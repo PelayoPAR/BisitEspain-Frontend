@@ -1,8 +1,5 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import Loading from "../Loading/Loading";
-import Error from "../Error/Error";
-import ProvinceDetails from "../ProvinceDetails/ProvinceDetails";
+import React from "react";
+import ProvinceItem from "../ProvinceItem/ProvinceItem";
 import { useNavigate } from "react-router-dom";
 
 function ProvinceList({ data, isError, isLoading }) {
@@ -14,7 +11,7 @@ function ProvinceList({ data, isError, isLoading }) {
       <ul>
         {data.map((province) => {
           return (
-            <ProvinceDetails
+            <ProvinceItem
               province={province}
               key={province._id}
               navigate={navigate}

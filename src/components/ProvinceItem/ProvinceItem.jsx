@@ -1,7 +1,6 @@
 import React from "react";
-import { useParams } from "react-router-dom";
 
-function ProvinceDetails({ province, navigate }) {
+function ProvinceItem({ province, navigate }) {
   return (
     <div
       onClick={() => {
@@ -13,4 +12,4 @@ function ProvinceDetails({ province, navigate }) {
   );
 }
 
-export default ProvinceDetails;
+export default ProvinceItem;
