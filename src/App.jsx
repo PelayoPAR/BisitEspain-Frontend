@@ -73,6 +73,15 @@ function App() {
         />
 
         <Route
+          path="/profile"
+          element={
+            <IsAnon>
+              <ProfilePage />
+            </IsAnon>
+          }
+        />
+
+        <Route
           path="/signup"
           element={
             <IsAnon>

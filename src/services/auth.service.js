@@ -37,10 +37,10 @@ class AuthService {
     // return axios.post("http://localhost:5005/auth/verify");
   };
 
-  delete = (userId) => {
-    console.log("auth service delete reached");
-    return this.api.delete(`/auth/profile/${userId}`);
-  };
+  // delete = (userId) => {
+  //   // console.log("auth service delete reached");
+  //   return this.api.delete(`/auth/profile/${userId}`);
+  // };
 }
 
 // Create one instance (object) of the service
