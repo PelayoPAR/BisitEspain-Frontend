@@ -15,6 +15,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import Error from "./components/Error/Error";
 import Loading from "./components/Loading/Loading";
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 
 function App() {
   const [data, setData] = useState();
@@ -58,15 +59,17 @@ function App() {
           element={
             <HomePage data={data} isError={isError} isLoading={isLoading} />
           }
+          name="Home"
         />
 
         <Route
-          path="/profile"
+          path="/profile/:userId"
           element={
             <IsPrivate>
               <ProfilePage />
             </IsPrivate>
           }
+          name="ProfilePage"
         />
 
         <Route
@@ -76,6 +79,7 @@ function App() {
               <SignupPage />
             </IsAnon>
           }
+          name="SignupPage"
         />
         <Route
           path="/login"
@@ -84,6 +88,7 @@ function App() {
               <LoginPage />
             </IsAnon>
           }
+          name="LoginPage"
         />
 
         <Route
@@ -95,6 +100,13 @@ function App() {
               isLoading={isLoading}
             />
           }
+          name="ProvinceDetailsPage"
+        />
+
+        <Route
+          path="/lostandfound"
+          element={<NotFoundPage />}
+          name="NotFoundPage"
         />
       </Routes>
     </div>
