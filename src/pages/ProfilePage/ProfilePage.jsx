@@ -13,6 +13,7 @@ function ProfilePage() {
   const handleSubmit = () => {
     console.log("Handle submit reached");
     const requestBody = userId;
+    console.log(errorMessage);
 
     authService
       .delete(requestBody)
