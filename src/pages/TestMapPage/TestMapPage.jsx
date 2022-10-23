@@ -21,6 +21,7 @@ function TestMapPage() {
     height: "100vh",
     zoom: 5,
   });
+  console.log(setViewport);
   return (
     <div style={{ width: "500px", height: "500px" }}>
       <ReactMapGL
