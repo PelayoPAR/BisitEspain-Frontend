@@ -1,16 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
+import MapComponent from "../../components/MapComponent/MapComponent";
 
 function ProvinceDetailsPage({ data, isError, isLoading }) {
   const { provinceId } = useParams();
+  // const [viewport, setViewport] = useState({
+  //   latitude: 37.3901,
+  //   longitude: -5.9947,
+  //   width: "100vw",
+  //   height: "100vh",
+  //   zoom: 10,
+  // });
   const singleProvince = data.filter((province) => {
     return province._id === provinceId;
   });
   console.log(singleProvince);
   return (
     <div>
-      <h2>Province Details Page</h2>
-      <div>{singleProvince[0].name}</div>
+      <h2>{singleProvince[0].name}</h2>
+
       <div>
         {singleProvince[0].contents.landmarks && (
           <div>
@@ -40,6 +48,15 @@ function ProvinceDetailsPage({ data, isError, isLoading }) {
             </ul>
           </div>
         )}
+        <div>
+          <MapComponent />
+        </div>
+        {/* <div>
+          <MapComponent
+            viewport={viewport}
+            mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
+          />
+        </div> */}
       </div>
     </div>
   );
