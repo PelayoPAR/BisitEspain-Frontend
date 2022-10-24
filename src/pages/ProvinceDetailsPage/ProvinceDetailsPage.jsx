@@ -2,7 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import MapComponent from "../../components/MapComponent/MapComponent";
 
-function ProvinceDetailsPage({ data, isError, isLoading }) {
+function ProvinceDetailsPage({ allProvinces, isError, isLoading }) {
   const { provinceId } = useParams();
   // const [viewport, setViewport] = useState({
   //   latitude: 37.3901,
@@ -11,7 +11,7 @@ function ProvinceDetailsPage({ data, isError, isLoading }) {
   //   height: "100vh",
   //   zoom: 10,
   // });
-  const singleProvince = data.filter((province) => {
+  const singleProvince = allProvinces.filter((province) => {
     return province._id === provinceId;
   });
   console.log(singleProvince);
@@ -49,7 +49,7 @@ function ProvinceDetailsPage({ data, isError, isLoading }) {
           </div>
         )}
         <div>
-          <MapComponent />
+          <MapComponent center={singleProvince[0].center} />
         </div>
         {/* <div>
           <MapComponent

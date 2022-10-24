@@ -9,10 +9,10 @@ import ReactMapGL from "react-map-gl";
 //       height: "100vh",
 //       zoom: 10,
 //     });
-function MapComponent() {
+function MapComponent({ center }) {
   const [viewport, setViewport] = useState({
-    longitude: -5.9947,
-    latitude: 37.3901,
+    longitude: center.longitude,
+    latitude: center.latitude,
     width: "100vw",
     height: "100vh",
     zoom: 8,

@@ -19,7 +19,7 @@ import Loading from "./components/Loading/Loading";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 
 function App() {
-  const [data, setData] = useState();
+  const [allProvinces, setAllProvinces] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
 
@@ -30,7 +30,7 @@ function App() {
     axios
       .get(process.env.REACT_APP_SERVER_URL)
       .then((result) => {
-        setData(result.data);
+        setAllProvinces(result.data);
         console.log(result.data);
       })
       .catch((err) => {
@@ -58,7 +58,11 @@ function App() {
         <Route
           path="/"
           element={
-            <HomePage data={data} isError={isError} isLoading={isLoading} />
+            <HomePage
+              allProvinces={allProvinces}
+              isError={isError}
+              isLoading={isLoading}
+            />
           }
           name="Home"
         />
@@ -105,7 +109,7 @@ function App() {
           path="/:provinceId"
           element={
             <ProvinceDetailsPage
-              data={data}
+              allProvinces={allProvinces}
               isError={isError}
               isLoading={isLoading}
             />

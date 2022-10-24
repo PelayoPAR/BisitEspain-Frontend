@@ -1,12 +1,16 @@
 import ProvinceList from "../../components/ProvinceList/ProvinceList";
 import "./HomePage.css";
 
-function HomePage({ data, isError, isLoading }) {
+function HomePage({ allProvinces, isError, isLoading }) {
   return (
     <div className="homeMain">
       <h1>Home page</h1>
       <div className="provinceList">
-        <ProvinceList data={data} isError={isError} isLoading={isLoading} />
+        <ProvinceList
+          allProvinces={allProvinces}
+          isError={isError}
+          isLoading={isLoading}
+        />
       </div>
     </div>
   );
