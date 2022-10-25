@@ -1,18 +1,11 @@
 import React, { useState } from "react";
-import ReactMapGL from "react-map-gl";
+import ReactMapGL, { Marker } from "react-map-gl";
 
-// function MapComponent({ viewport, mapboxApiAccessToken }) {
-//     const [viewport, setViewport] = useState({
-//       latitude: 37.3901,
-//       longitude: -5.9947,
-//       width: "100vw",
-//       height: "100vh",
-//       zoom: 10,
-//     });
-function MapComponent({ center }) {
+function MapComponent({ selectedProvince }) {
+  console.log(selectedProvince);
   const [viewport, setViewport] = useState({
-    longitude: center.longitude,
-    latitude: center.latitude,
+    longitude: selectedProvince.center.longitude,
+    latitude: selectedProvince.center.latitude,
     width: "100vw",
     height: "100vh",
     zoom: 8,
@@ -24,11 +17,17 @@ function MapComponent({ center }) {
         {...viewport}
         mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_ACCESS_TOKEN}
         mapStyle="mapbox://styles/mapbox/streets-v9"
-
-        // {...viewport}
-        // mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
+        onMove={(evt) => setViewport(evt.viewport)}
       >
-        markers here
+        {selectedProvince.contents.landmarks.map((landmark) => (
+          <Marker
+            key={landmark._id}
+            latitude={landmark.position.latitude}
+            longitude={landmark.position.longitude}
+          >
+            <h1>LANDMARK</h1>
+          </Marker>
+        ))}
       </ReactMapGL>
     </div>
   );

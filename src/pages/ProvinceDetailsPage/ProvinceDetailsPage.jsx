@@ -4,13 +4,7 @@ import MapComponent from "../../components/MapComponent/MapComponent";
 
 function ProvinceDetailsPage({ allProvinces, isError, isLoading }) {
   const { provinceId } = useParams();
-  // const [viewport, setViewport] = useState({
-  //   latitude: 37.3901,
-  //   longitude: -5.9947,
-  //   width: "100vw",
-  //   height: "100vh",
-  //   zoom: 10,
-  // });
+
   const singleProvince = allProvinces.filter((province) => {
     return province._id === provinceId;
   });
@@ -49,14 +43,8 @@ function ProvinceDetailsPage({ allProvinces, isError, isLoading }) {
           </div>
         )}
         <div>
-          <MapComponent center={singleProvince[0].center} />
+          <MapComponent selectedProvince={singleProvince[0]} />
         </div>
-        {/* <div>
-          <MapComponent
-            viewport={viewport}
-            mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
-          />
-        </div> */}
       </div>
     </div>
   );
