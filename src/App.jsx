@@ -23,7 +23,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
 
-  console.log(process.env.REACT_APP_SERVER_URL);
+  // console.log(process.env.REACT_APP_SERVER_URL);
 
   useEffect(() => {
     setIsLoading(true);
@@ -31,7 +31,7 @@ function App() {
       .get(process.env.REACT_APP_SERVER_URL)
       .then((result) => {
         setAllProvinces(result.data);
-        console.log(result.data);
+        // console.log(result.data);
       })
       .catch((err) => {
         console.log(err);

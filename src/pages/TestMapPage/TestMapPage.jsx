@@ -11,17 +11,17 @@ function TestMapPage() {
   });
   // console.log(setViewport);
 
-  const dataOne = {
-    type: "Feature",
-    properties: {},
-    geometry: {
-      type: "LineString",
-      coordinates: [
-        [-5.993348, 37.386016],
-        [-5.986878, 37.37729],
-      ],
-    },
-  };
+  // const dataOne = {
+  //   type: "Feature",
+  //   properties: {},
+  //   geometry: {
+  //     type: "LineString",
+  //     coordinates: [
+  //       [-5.993348, 37.386016],
+  //       [-5.986878, 37.37729],
+  //     ],
+  //   },
+  // };
   const dataTwo = {
     type: "Feature",
     properties: { name: "Seville Test Route", category: "Urban" },
