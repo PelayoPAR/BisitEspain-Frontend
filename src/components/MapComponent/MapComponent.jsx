@@ -34,8 +34,8 @@ function MapComponent({ selectedProvince }) {
               "line-cap": "round",
             }}
             paint={{
-              "line-color": "rgba(3, 170, 238, 0.5)",
-              "line-width": 5,
+              "line-color": "rgba(232, 95, 42, 0.7)",
+              "line-width": 8,
             }}
           />
         </Source>
@@ -46,7 +46,9 @@ function MapComponent({ selectedProvince }) {
             latitude={landmark.position.latitude}
             longitude={landmark.position.longitude}
           >
-            <h1>LANDMARK</h1>
+            <div className="mapMarker">
+              <img src="/img/32x32.png" alt="Marker" />
+            </div>
           </Marker>
         ))}
       </ReactMapGL>
