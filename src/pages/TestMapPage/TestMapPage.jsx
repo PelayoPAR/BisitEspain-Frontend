@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ReactMapGL, { Source, Layer } from "react-map-gl";
+import ReactMapGL, { Source, Layer, Marker, Popup } from "react-map-gl";
 
 function TestMapPage() {
   const [viewport, setViewport] = useState({
@@ -105,6 +105,11 @@ function TestMapPage() {
               "line-width": 5,
             }}
           />
+          <Marker longitude={-5.9939} latitude={37.38539}>
+            <Popup longitude={-5.9939} latitude={37.38539} anchor="bottom">
+              Catedral de Sevilla
+            </Popup>
+          </Marker>
         </Source>
         markers here
       </ReactMapGL>

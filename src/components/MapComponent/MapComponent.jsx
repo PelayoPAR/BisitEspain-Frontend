@@ -1,8 +1,7 @@
-import React, { useState } from "react";
-import ReactMapGL, { Source, Layer, Marker } from "react-map-gl";
+import React, { useEffect, useState } from "react";
+import ReactMapGL, { Source, Layer, Marker, Popup } from "react-map-gl";
 
 function MapComponent({ selectedProvince }) {
-  console.log("Selected Province: ", selectedProvince);
   const [viewport, setViewport] = useState({
     longitude: selectedProvince.center.longitude,
     latitude: selectedProvince.center.latitude,
@@ -10,7 +9,8 @@ function MapComponent({ selectedProvince }) {
     height: "100vh",
     zoom: 8,
   });
-  // console.log(setViewport);
+  const [selectedLandmark, setSelectedLandmark] = useState(null);
+  const [showPopup, setShowPopup] = useState(false);
   return (
     <div style={{ height: "800px", width: "800px" }}>
       <ReactMapGL
@@ -46,9 +46,42 @@ function MapComponent({ selectedProvince }) {
             latitude={landmark.position.latitude}
             longitude={landmark.position.longitude}
           >
-            <div className="mapMarker">
+            <div
+              className="mapMarker"
+              onClick={(evt) => {
+                evt.stopPropagation();
+                setSelectedLandmark(landmark);
+                setShowPopup(true);
+                console.log(evt);
+              }}
+            >
               <img src="/img/32x32.png" alt="Marker" />
             </div>
+            {showPopup && (
+              <Popup
+                style={{ minWidth: "50px", minHeight: "50px" }}
+                longitude={selectedLandmark.position.longitude}
+                latitude={selectedLandmark.position.latitude}
+                anchor="bottom"
+                closeOnClick="false"
+                onClose={() => setShowPopup(false)}
+              >
+                {console.log("URL is: ", selectedLandmark.URL)}
+                <div>
+                  <h3>{selectedLandmark.name}</h3>
+
+                  <p>
+                    <a
+                      href={selectedLandmark.URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      More info
+                    </a>
+                  </p>
+                </div>
+              </Popup>
+            )}
           </Marker>
         ))}
       </ReactMapGL>

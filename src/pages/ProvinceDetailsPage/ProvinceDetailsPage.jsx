@@ -35,7 +35,7 @@ function ProvinceDetailsPage({ allProvinces, isError, isLoading }) {
               {singleProvince[0].contents.routes.map((route) => {
                 return (
                   <div key={route._id}>
-                    <li>{route.name}</li>
+                    <li>{route.properties.name}</li>
                   </div>
                 );
               })}
