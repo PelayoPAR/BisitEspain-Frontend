@@ -11,6 +11,7 @@ function MapComponent({ selectedProvince }) {
   });
   const [selectedLandmark, setSelectedLandmark] = useState(null);
   const [showPopup, setShowPopup] = useState(false);
+
   return (
     <div style={{ height: "800px", width: "800px" }}>
       <ReactMapGL
@@ -69,16 +70,17 @@ function MapComponent({ selectedProvince }) {
                 {console.log("URL is: ", selectedLandmark.URL)}
                 <div>
                   <h3>{selectedLandmark.name}</h3>
-
-                  <p>
-                    <a
-                      href={selectedLandmark.URL}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      More info
-                    </a>
-                  </p>
+                  {selectedLandmark.URL.length > 5 && (
+                    <p>
+                      <a
+                        href={selectedLandmark.URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        More info
+                      </a>
+                    </p>
+                  )}
                 </div>
               </Popup>
             )}

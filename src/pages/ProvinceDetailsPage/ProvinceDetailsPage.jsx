@@ -1,5 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import CreateComment from "../../components/CreateComment/CreateComment";
 import MapComponent from "../../components/MapComponent/MapComponent";
 
 function ProvinceDetailsPage({ allProvinces, isError, isLoading }) {
@@ -11,6 +12,7 @@ function ProvinceDetailsPage({ allProvinces, isError, isLoading }) {
   console.log(singleProvince);
   return (
     <div>
+      <CreateComment />
       <h2>{singleProvince[0].name}</h2>
 
       <div>

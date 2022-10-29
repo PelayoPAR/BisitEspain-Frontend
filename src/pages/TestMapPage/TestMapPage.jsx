@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ReactMapGL, { Source, Layer, Marker, Popup } from "react-map-gl";
+import CreateComment from "../../components/CreateComment/CreateComment";
 
 function TestMapPage() {
   const [viewport, setViewport] = useState({
@@ -84,35 +85,38 @@ function TestMapPage() {
   };
 
   return (
-    <div style={{ width: "500px", height: "500px" }}>
-      <ReactMapGL
-        mapStyle="mapbox://styles/mapbox/streets-v9"
-        {...viewport}
-        mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_ACCESS_TOKEN}
-        onMove={(evt) => setViewport(evt.viewport)}
-      >
-        <Source id="polylineLayer" type="geojson" data={dataTwo}>
-          <Layer
-            id="lineLayer"
-            type="line"
-            source="my-data"
-            layout={{
-              "line-join": "round",
-              "line-cap": "round",
-            }}
-            paint={{
-              "line-color": "rgba(3, 170, 238, 0.5)",
-              "line-width": 5,
-            }}
-          />
-          <Marker longitude={-5.9939} latitude={37.38539}>
-            <Popup longitude={-5.9939} latitude={37.38539} anchor="bottom">
-              Catedral de Sevilla
-            </Popup>
-          </Marker>
-        </Source>
-        markers here
-      </ReactMapGL>
+    <div>
+      {/* <CreateComment /> */}
+      <div style={{ width: "500px", height: "500px" }}>
+        <ReactMapGL
+          mapStyle="mapbox://styles/mapbox/streets-v9"
+          {...viewport}
+          mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_ACCESS_TOKEN}
+          onMove={(evt) => setViewport(evt.viewport)}
+        >
+          <Source id="polylineLayer" type="geojson" data={dataTwo}>
+            <Layer
+              id="lineLayer"
+              type="line"
+              source="my-data"
+              layout={{
+                "line-join": "round",
+                "line-cap": "round",
+              }}
+              paint={{
+                "line-color": "rgba(3, 170, 238, 0.5)",
+                "line-width": 5,
+              }}
+            />
+            <Marker longitude={-5.9939} latitude={37.38539}>
+              <Popup longitude={-5.9939} latitude={37.38539} anchor="bottom">
+                Catedral de Sevilla
+              </Popup>
+            </Marker>
+          </Source>
+          markers here
+        </ReactMapGL>
+      </div>
     </div>
   );
 }
