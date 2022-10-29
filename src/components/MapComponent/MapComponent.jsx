@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import ReactMapGL, { Source, Layer, Marker, Popup } from "react-map-gl";
 
 function MapComponent({ selectedProvince }) {
