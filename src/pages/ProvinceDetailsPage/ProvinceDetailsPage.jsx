@@ -9,10 +9,9 @@ function ProvinceDetailsPage({ allProvinces, isError, isLoading }) {
   const singleProvince = allProvinces.filter((province) => {
     return province._id === provinceId;
   });
-  console.log(singleProvince);
+  // console.log(singleProvince);
   return (
     <div>
-      <CreateComment />
       <h2>{singleProvince[0].name}</h2>
 
       <div>
@@ -23,7 +22,10 @@ function ProvinceDetailsPage({ allProvinces, isError, isLoading }) {
               {singleProvince[0].contents.landmarks.map((landmark) => {
                 return (
                   <div key={landmark._id}>
-                    <li>{landmark.name}</li>
+                    <h2>
+                      <li>{landmark.name}</li>
+                    </h2>
+                    <CreateComment props={landmark} />
                   </div>
                 );
               })}
@@ -37,7 +39,10 @@ function ProvinceDetailsPage({ allProvinces, isError, isLoading }) {
               {singleProvince[0].contents.routes.map((route) => {
                 return (
                   <div key={route._id}>
-                    <li>{route.properties.name}</li>
+                    <h2>
+                      <li>{route.properties.name}</li>
+                    </h2>
+                    <CreateComment props={route} />
                   </div>
                 );
               })}

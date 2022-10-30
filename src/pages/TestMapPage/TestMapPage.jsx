@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import ReactMapGL, { Source, Layer, Marker, Popup } from "react-map-gl";
-import CreateComment from "../../components/CreateComment/CreateComment";
 
 function TestMapPage() {
   const [viewport, setViewport] = useState({
@@ -86,7 +85,6 @@ function TestMapPage() {
 
   return (
     <div>
-      {/* <CreateComment /> */}
       <div style={{ width: "500px", height: "500px" }}>
         <ReactMapGL
           mapStyle="mapbox://styles/mapbox/streets-v9"

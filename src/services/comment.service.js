@@ -18,24 +18,25 @@ class CommentService {
   }
 
   createComment = async (requestBody) => {
+    console.log(requestBody);
     return this.api.post("/comment/create", requestBody);
   };
 
-  getAllComments = async () => {
-    return this.api.get("/comment/all");
-  };
+  // getAllComments = async () => {
+  //   return this.api.get("/comment/all");
+  // };
 
-  getOneComment = async (id) => {
-    return this.api.get(`/comment/${id}`);
-  };
+  // getOneComment = async (id) => {
+  //   return this.api.get(`/comment/${id}`);
+  // };
 
-  updateOneComment = async (id, requestBody) => {
-    return this.api.put(`/comment/update/${id}`, requestBody);
-  };
+  // updateOneComment = async (id, requestBody) => {
+  //   return this.api.put(`/comment/update/${id}`, requestBody);
+  // };
 
-  deleteComment = async (id) => {
-    return this.api.delete(`/comment/delete/${id}`);
-  };
+  // deleteComment = async (id) => {
+  //   return this.api.delete(`/comment/delete/${id}`);
+  // };
 }
 
 const commentService = new CommentService();

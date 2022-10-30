@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import commentService from "../../services/comment.service";
 
-function CreateComment() {
-  const [form, setForm] = useState({ message: "" });
+function CreateComment({ props }) {
   const [responseMessage, setResponseMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState(undefined);
+  const isLandmark = props.contentType === "Landmark";
+  const { _id } = props;
+  const [form, setForm] = useState({ message: "", isLandmark, _id });
 
   function handleChange(evt) {
     const { name, value } = evt.target;
@@ -18,15 +20,17 @@ function CreateComment() {
       .createComment(form)
       .then((response) => {
         setResponseMessage(response.data.message);
+        console.log(responseMessage);
       })
       .catch((error) => {
         setErrorMessage(error.response.data.message);
+        console.log(errorMessage);
       });
   }
 
   return (
     <div>
-      <h1>Create Comment</h1>
+      <h3>Create Comment</h3>
       <form onSubmit={handleSubmit}>
         <label>
           Message
@@ -50,14 +54,6 @@ function CreateComment() {
             <option value={4}>4</option>
             <option value={5}>5</option>
           </select>
-          {/* <input
-            type="number"
-            name="rating"
-            onChange={handleChange}
-            value={form.rating}
-            min={0}
-            max={5}
-          /> */}
         </label>
         <br />
 
