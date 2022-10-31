@@ -6,7 +6,13 @@ function CreateComment({ props }) {
   const [errorMessage, setErrorMessage] = useState(undefined);
   const isLandmark = props.contentType === "Landmark";
   const { _id } = props;
-  const [form, setForm] = useState({ message: "", isLandmark, _id });
+  const defaultRating = 5;
+  const [form, setForm] = useState({
+    message: "",
+    rating: defaultRating,
+    isLandmark,
+    _id,
+  });
 
   function handleChange(evt) {
     const { name, value } = evt.target;
@@ -46,7 +52,12 @@ function CreateComment({ props }) {
         <br />
         <label>
           Rating
-          <select name="rating" id="rating" onChange={handleChange}>
+          <select
+            name="rating"
+            id="rating"
+            defaultValue={defaultRating}
+            onChange={handleChange}
+          >
             <option value={0}>0</option>
             <option value={1}>1</option>
             <option value={2}>2</option>
