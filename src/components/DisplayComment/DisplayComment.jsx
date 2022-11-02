@@ -29,7 +29,7 @@ function DisplayComment({ props }) {
         console.log(error)
       })
   }
-  console.log("comments: ", comments)
+  // console.log("comments: ", comments)
   //console.log(touristicItemId);
 
   return (
@@ -39,9 +39,7 @@ function DisplayComment({ props }) {
       {comments && (
         <div>
           {comments.map((comment) => {
-            {
-              return <div key={comment._id}>{comment.message}</div>
-            }
+            return <div key={comment._id}>{comment.message}</div>
           })}
         </div>
       )}

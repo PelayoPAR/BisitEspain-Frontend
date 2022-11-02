@@ -1,15 +1,14 @@
-import React from "react";
-import { useParams } from "react-router-dom";
-import CreateComment from "../../components/CreateComment/CreateComment";
-import DisplayComment from "../../components/DisplayComment/DisplayComment";
-import MapComponent from "../../components/MapComponent/MapComponent";
+import React from "react"
+import { useParams } from "react-router-dom"
+import MapComponent from "../../components/MapComponent/MapComponent"
+import TouristicItem from "../../components/TouristicItem/TouristicItem"
 
 function ProvinceDetailsPage({ allProvinces, isError, isLoading }) {
-  const { provinceId } = useParams();
+  const { provinceId } = useParams()
 
   const singleProvince = allProvinces.filter((province) => {
-    return province._id === provinceId;
-  });
+    return province._id === provinceId
+  })
 
   return (
     <div>
@@ -21,17 +20,7 @@ function ProvinceDetailsPage({ allProvinces, isError, isLoading }) {
             <h2>Landmarks</h2>
             <ul>
               {singleProvince[0].contents.landmarks.map((landmark) => {
-                return (
-                  <div key={landmark._id}>
-                    <h2>
-                      <li>{landmark.name}</li>
-                    </h2>
-
-                    <DisplayComment props={landmark} />
-
-                    <CreateComment props={landmark} />
-                  </div>
-                );
+                return <TouristicItem key={landmark._id} itemInfo={landmark} />
               })}
             </ul>
           </div>
@@ -41,15 +30,7 @@ function ProvinceDetailsPage({ allProvinces, isError, isLoading }) {
             <h2>Routes</h2>
             <ul>
               {singleProvince[0].contents.routes.map((route) => {
-                return (
-                  <div key={route._id}>
-                    <h2>
-                      <li>{route.properties.name}</li>
-                    </h2>
-                    <DisplayComment props={route} />
-                    <CreateComment props={route} />
-                  </div>
-                );
+                return <TouristicItem key={route._id} itemInfo={route} />
               })}
             </ul>
           </div>
@@ -59,7 +40,7 @@ function ProvinceDetailsPage({ allProvinces, isError, isLoading }) {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default ProvinceDetailsPage;
+export default ProvinceDetailsPage
