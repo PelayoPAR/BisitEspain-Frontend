@@ -7,7 +7,7 @@ import * as topojson from "topojson";
 import "./Map.css";
 
 const Map = ({ allProvinces }) => {
-  console.log(allProvinces);
+  // console.log(allProvinces);
   const svgRef = useRef();
   const wrapperRef = useRef();
   const dimensions = useResizeObserver(wrapperRef);
@@ -47,7 +47,7 @@ const Map = ({ allProvinces }) => {
 
     const pathGenerator = geoPath().projection(projection);
 
-    console.log(geoData);
+    // console.log(geoData);
 
     regionContainer
       .selectAll(".administrativeRegion")

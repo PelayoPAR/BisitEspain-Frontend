@@ -7,7 +7,7 @@ function MapComponent({ selectedProvince }) {
     latitude: selectedProvince.center.latitude,
     width: "100vw",
     height: "100vh",
-    zoom: 9,
+    zoom: 8.5,
   });
   const [selectedLandmark, setSelectedLandmark] = useState(null);
   const [showPopup, setShowPopup] = useState(false);

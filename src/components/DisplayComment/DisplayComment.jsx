@@ -1,44 +1,52 @@
-import React, { useState } from "react";
-import commentService from "../../services/comment.service";
+import React, { useState } from "react"
+import commentService from "../../services/comment.service"
 
 function DisplayComment({ props }) {
-  const [responseMessage, setResponseMessage] = useState("");
-  const [errorMessage, setErrorMessage] = useState(undefined);
-  const isLandmark = props.contentType === "Landmark";
-  const { _id } = props;
-  const [touristicItem, setTouristicItem] = useState({ _id, isLandmark });
+  const [comments, setComments] = useState("")
+  const isLandmark = props.contentType === "Landmark"
+  const { _id } = props
 
+  const touristicItem = { _id, isLandmark }
   function handleClick(e) {
-    e.preventDefault();
+    e.preventDefault()
     //console.log("handleClick ", e);
-    setTouristicItem(props._id);
-    handleSubmit(e);
+
+    handleSubmit(e)
   }
 
   function handleSubmit(e) {
-    e.preventDefault();
+    e.preventDefault()
     //console.log("handleSubmit ", e);
+    console.log(touristicItem)
     commentService
-      .getAllComments(touristicItem)
+      .getComments(touristicItem)
       .then((response) => {
-        setResponseMessage(response.data.resCommentedLandmark);
-        console.log("responseMessage ", response);
+        setComments(response.data.comments)
+        console.log(response)
       })
       .catch((error) => {
-        setErrorMessage(error.response.data.message);
-        console.log(errorMessage);
-      });
+        // setErrorMessage(error)
+        console.log(error)
+      })
   }
-
+  console.log("comments: ", comments)
   //console.log(touristicItemId);
 
   return (
     <div>
       <h3 onClick={(e) => handleClick(e)}>Display Comment</h3>
-      <div>{props._id}</div>
-      <div></div>
+
+      {comments && (
+        <div>
+          {comments.map((comment) => {
+            {
+              return <div key={comment._id}>{comment.message}</div>
+            }
+          })}
+        </div>
+      )}
     </div>
-  );
+  )
 }
 
-export default DisplayComment;
+export default DisplayComment
