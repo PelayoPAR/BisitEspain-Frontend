@@ -1,10 +1,9 @@
-import React, { useState } from "react"
+import React from "react"
 import commentService from "../../services/comment.service"
 
-function DisplayComment({ props }) {
-  const [comments, setComments] = useState("")
-  const isLandmark = props.contentType === "Landmark"
-  const { _id } = props
+function DisplayComment({ itemInfo, comments, setComments }) {
+  const isLandmark = itemInfo.contentType === "Landmark"
+  const { _id } = itemInfo
 
   const touristicItem = { _id, isLandmark }
   function handleClick(e) {
@@ -22,11 +21,11 @@ function DisplayComment({ props }) {
       .getComments(touristicItem)
       .then((response) => {
         setComments(response.data.comments)
-        console.log(response)
+        // console.log(response)
       })
       .catch((error) => {
         // setErrorMessage(error)
-        console.log(error)
+        console.error(error)
       })
   }
   // console.log("comments: ", comments)
@@ -35,11 +34,11 @@ function DisplayComment({ props }) {
   return (
     <div>
       <h3 onClick={(e) => handleClick(e)}>Display Comment</h3>
-
-      {comments && (
+      {console.log("comments at display: ", comments)}
+      {!!comments.length && (
         <div>
           {comments.map((comment) => {
-            return <div key={comment._id}>{comment.message}</div>
+            return <div key={comment?._id}>{comment?.message}</div>
           })}
         </div>
       )}

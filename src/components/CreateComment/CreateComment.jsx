@@ -1,37 +1,34 @@
-import React, { useState } from "react";
-import commentService from "../../services/comment.service";
+import React, { useState } from "react"
+import commentService from "../../services/comment.service"
 
-function CreateComment({ props }) {
-  const [responseMessage, setResponseMessage] = useState("");
-  const [errorMessage, setErrorMessage] = useState(undefined);
-  const isLandmark = props.contentType === "Landmark";
-  const { _id } = props;
-  const defaultRating = 5;
+function CreateComment({ itemInfo, comments, setComments }) {
+  const isLandmark = itemInfo.contentType === "Landmark"
+  const { _id } = itemInfo
+  const touristicItem = { _id, isLandmark }
+  const defaultRating = 5
   const [form, setForm] = useState({
     message: "",
     rating: defaultRating,
     isLandmark,
     _id,
-  });
+  })
 
   function handleChange(evt) {
-    const { name, value } = evt.target;
-    setForm({ ...form, [name]: value });
+    const { name, value } = evt.target
+    setForm({ ...form, [name]: value })
   }
 
-  function handleSubmit(e) {
-    e.preventDefault();
+  async function handleSubmit(e) {
+    e.preventDefault()
 
-    commentService
+    await commentService
       .createComment(form)
-      .then((response) => {
-        setResponseMessage(response.data.message);
-        console.log(responseMessage);
-      })
+
       .catch((error) => {
-        setErrorMessage(error.response.data.message);
-        console.log(errorMessage);
-      });
+        console.error(error)
+      })
+    const response = await commentService.getComments(touristicItem)
+    setComments(response.data.comments)
   }
 
   return (
@@ -71,7 +68,7 @@ function CreateComment({ props }) {
         <button type="submit">Add Comment</button>
       </form>
     </div>
-  );
+  )
 }
 
-export default CreateComment;
+export default CreateComment
