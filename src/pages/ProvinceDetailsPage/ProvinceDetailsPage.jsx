@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import CreateComment from "../../components/CreateComment/CreateComment";
+import DisplayComment from "../../components/DisplayComment/DisplayComment";
 import MapComponent from "../../components/MapComponent/MapComponent";
 import commentService from "../../services/comment.service";
 
@@ -49,6 +50,9 @@ function ProvinceDetailsPage({ allProvinces, isError, isLoading }) {
                     <h2>
                       <li>{landmark.name}</li>
                     </h2>
+                    {/* {landmark.comments.map((comment) => )} */}
+                    <DisplayComment props={landmark} />
+
                     <CreateComment props={landmark} />
                   </div>
                 );
@@ -66,6 +70,7 @@ function ProvinceDetailsPage({ allProvinces, isError, isLoading }) {
                     <h2>
                       <li>{route.properties.name}</li>
                     </h2>
+                    <DisplayComment props={route} />
                     <CreateComment props={route} />
                   </div>
                 );

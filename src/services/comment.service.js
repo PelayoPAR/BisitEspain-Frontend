@@ -21,8 +21,9 @@ class CommentService {
     return this.api.post("/comment/create", requestBody);
   };
 
-  getAllComments = async () => {
-    return this.api.get("/comment/getComments");
+  getAllComments = async (requestBody) => {
+    console.log(requestBody);
+    return this.api.post("/comment/getComments", requestBody);
   };
 
   // getOneComment = async (id) => {
