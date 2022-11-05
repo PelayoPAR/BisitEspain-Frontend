@@ -32,6 +32,9 @@ const Map = ({ allProvinces }) => {
       ...baseGeoData,
       features: baseGeoData.features.map((province) => {
         province.properties.hasContent = provinceHasContent(province)
+        province.properties.color = province.properties.hasContent
+          ? "#ffc107"
+          : "gray"
         return province
       }),
     }
@@ -41,7 +44,7 @@ const Map = ({ allProvinces }) => {
     if (!geoData) return
     if (!dimensions) return
 
-    console.log(geoData)
+    // console.log(geoData)
 
     const { width, height } = dimensions
 
@@ -64,11 +67,9 @@ const Map = ({ allProvinces }) => {
       .join("path")
       .attr("class", "administrativeRegion")
       .attr("d", (feature) => pathGenerator(feature))
-      .attr("fill", (feature) =>
-        feature.properties.hasContent ? "#ffc107" : "gray"
-      )
+      .attr("fill", (feature) => feature.properties.color)
       .attr("stroke", "white")
-      .on("mouseover", async function (event, feature) {
+      .on("mouseover", function (event, feature) {
         window.document.querySelector(".regionContainer").appendChild(this)
         select(this)
           .style("fill", "red")
@@ -77,9 +78,7 @@ const Map = ({ allProvinces }) => {
       })
       .on("mouseout", function (event, feature) {
         select(this)
-          .style("fill", (feature) =>
-            feature.properties.hasContent ? "#ffc107" : "gray"
-          )
+          .style("fill", (feature) => feature.properties.color)
           .transition(500)
           .style("transform", "translateX(0px)")
       })
