@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import CommentInput from "../CommentInput/CommentInput"
+import CommentRemover from "../CommentRemover/CommentRemover"
 
 function Comment({
   userId,
@@ -12,37 +13,35 @@ function Comment({
   const [editing, setEditing] = useState(false)
   const isOwner = userId === ownerId
   //   console.log("Comment id at Comment ", commentId)
-  return editing ? (
+  return (
     <>
-      <CommentInput
-        setEditing={setEditing}
-        setComments={setComments}
-        updateMode
-        commentId={commentId}
-        message={message}
-        itemInfo={itemInfo}
-      />
-      {isOwner && (
-        <button
-          onClick={() => {
-            setEditing(false)
-          }}
-        >
-          Cancel
-        </button>
+      {editing ? (
+        <CommentInput
+          setEditing={setEditing}
+          setComments={setComments}
+          updateMode
+          commentId={commentId}
+          message={message}
+          itemInfo={itemInfo}
+        />
+      ) : (
+        <div>{message}</div>
       )}
-    </>
-  ) : (
-    <>
-      <div>{message}</div>
       {isOwner && (
-        <button
-          onClick={() => {
-            setEditing(true)
-          }}
-        >
-          Edit Comment
-        </button>
+        <div>
+          <button
+            onClick={() => {
+              setEditing(!editing)
+            }}
+          >
+            {editing ? "Cancel" : "Edit"}
+          </button>
+          <CommentRemover
+            commentId={commentId}
+            itemInfo={itemInfo}
+            setComments={setComments}
+          />
+        </div>
       )}
     </>
   )
