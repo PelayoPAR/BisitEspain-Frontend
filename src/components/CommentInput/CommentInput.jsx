@@ -12,6 +12,7 @@ function CommentInput({
   const isLandmark = itemInfo?.contentType === "Landmark"
   const _id = itemInfo ? itemInfo._id : commentId
   const touristicItem = { _id, isLandmark }
+  console.log("log for the sakes of console", touristicItem)
   const defaultRating = 5
   const [form, setForm] = useState({
     message,
