@@ -16,7 +16,7 @@ function CommentsList({ userId, itemInfo, comments, setComments }) {
   function handleSubmit(e) {
     e.preventDefault()
     //console.log("handleSubmit ", e);
-    console.log(touristicItem)
+    console.log({ touristicItem })
     commentService
       .getComments(touristicItem)
       .then((response) => {
@@ -34,7 +34,7 @@ function CommentsList({ userId, itemInfo, comments, setComments }) {
   return (
     <div>
       <h3 onClick={(e) => handleClick(e)}>Display Comment</h3>
-      {console.log("comments at display: ", comments)}
+      {/* {console.log("comments at display: ", comments)} */}
       {!!comments.length && (
         <div>
           {comments.map((comment) => {

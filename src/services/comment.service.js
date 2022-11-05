@@ -22,15 +22,11 @@ class CommentService {
   }
 
   getComments = async (requestInfo) => {
-    const touristicItemType = requestInfo.isLandmark ? "landmark" : "route"
+    const touristicItemType = requestInfo.isLandmark ? "Landmark" : "route"
     return this.api.get(
       `/comment/${touristicItemType}/getComments?touristicItemId=${requestInfo._id}`
     )
   }
-
-  // getOneComment = async (id) => {
-  //   return this.api.get(`/comment/${id}`);
-  // };
 
   updateOneComment = async (requestInfo) => {
     const { commentId } = requestInfo

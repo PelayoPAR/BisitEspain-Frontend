@@ -8,7 +8,7 @@ function CommentInput({
   setComments,
   commentId,
 }) {
-  console.log("commentId at CommentInput ", commentId)
+  // console.log("commentId at CommentInput ", commentId)
   const isLandmark = itemInfo?.contentType === "Landmark"
   const _id = itemInfo ? itemInfo._id : commentId
   const touristicItem = { _id, isLandmark }
@@ -28,17 +28,24 @@ function CommentInput({
   async function handleSubmit(e) {
     e.preventDefault()
     if (updateMode) {
-      await commentService.updateOneComment(form).catch((error) => {
-        console.error(error)
-      })
+      await commentService
+        .updateOneComment({ ...form, commentId })
+        .then((data) => {
+          console.log({ data })
+          // setComments(data.response.comments)
+          // inside array find by id and push it into setcomments
+        })
+        .catch((error) => {
+          console.error(error)
+        })
     } else {
       await commentService.createComment(form).catch((error) => {
         console.error(error)
       })
     }
 
-    const response = await commentService.getComments(touristicItem)
-    setComments(response.data.comments)
+    // const response = await commentService.getComments(touristicItem)
+    // setComments(response.data.comments)
   }
 
   if (updateMode) {
@@ -63,7 +70,7 @@ function CommentInput({
             <select
               name="rating"
               id="rating"
-              defaultValue={defaultRating}
+              defaultValue={form.rating}
               onChange={handleChange}
             >
               <option value={0}>0</option>
