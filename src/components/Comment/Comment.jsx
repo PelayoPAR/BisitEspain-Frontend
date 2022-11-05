@@ -27,7 +27,7 @@ function Comment({ userId, message, commentId, ownerId }) {
             setEditing(true)
           }}
         >
-          Edit
+          Edit Comment
         </button>
       )}
     </>
