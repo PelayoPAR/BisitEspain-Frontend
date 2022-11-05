@@ -9,11 +9,9 @@ function CommentInput({
   setComments,
   commentId,
 }) {
-  // console.log("commentId at CommentInput ", commentId)
   const isLandmark = itemInfo?.contentType === "Landmark"
   const _id = itemInfo?._id
   const touristicItem = { _id, isLandmark }
-  console.log("log for the sakes of console", touristicItem)
   const defaultRating = 5
   const [form, setForm] = useState({
     message,
@@ -30,12 +28,11 @@ function CommentInput({
   async function handleSubmit(e) {
     e.preventDefault()
     if (updateMode) {
-      const updatedComment = await commentService
+      await commentService
         .updateOneComment({ ...form, commentId })
         .catch((error) => {
           console.error(error)
         })
-      console.log(updatedComment)
     } else {
       await commentService.createComment(form).catch((error) => {
         console.error(error)
@@ -43,7 +40,6 @@ function CommentInput({
     }
 
     const response = await commentService.getComments(touristicItem)
-    console.log("CommentInput response", response)
     isLandmark
       ? setComments(response.data.comments)
       : setComments(response.data.properties.comments)

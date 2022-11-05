@@ -33,8 +33,11 @@ class CommentService {
     return this.api.put(`/comment/${commentId}`, requestInfo)
   }
 
-  deleteComment = async (id) => {
-    return this.api.delete(`/comment/${id}`)
+  deleteComment = async (requestInfo) => {
+    const { commentId, touristicItemId, isLandmark } = requestInfo
+    return this.api.delete(
+      `/comment/${commentId}?touristicItemId=${touristicItemId}&isLandmark=${isLandmark}`
+    )
   }
 }
 

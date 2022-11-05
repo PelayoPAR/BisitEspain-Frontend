@@ -53,7 +53,6 @@ function MapComponent({ selectedProvince }) {
                 evt.stopPropagation()
                 setSelectedLandmark(landmark)
                 setShowPopup(true)
-                // console.log(evt);
               }}
             >
               <img src="/img/32x32.png" alt="Marker" />

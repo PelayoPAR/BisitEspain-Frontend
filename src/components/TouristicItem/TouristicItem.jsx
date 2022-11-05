@@ -6,11 +6,8 @@ import CommentInput from "../CommentInput/CommentInput"
 function TouristicItem({ itemInfo }) {
   const [comments, setComments] = useState([])
   const isLandmark = !!itemInfo.contentType
-  const {
-    user: { _id: userId },
-  } = useContext(AuthContext)
-
-  // console.log("Iteminfo: ", itemInfo)
+  const authData = useContext(AuthContext)
+  let userId = authData?.user ? authData.user._id : "guest"
 
   // TODO: Add state variable, isEdit to set the comment form to create or update comment
   return (
@@ -24,11 +21,13 @@ function TouristicItem({ itemInfo }) {
         comments={comments}
         setComments={setComments}
       />
-      <CommentInput
-        itemInfo={itemInfo}
-        comments={comments}
-        setComments={setComments}
-      />
+      {userId !== "guest" && (
+        <CommentInput
+          itemInfo={itemInfo}
+          comments={comments}
+          setComments={setComments}
+        />
+      )}
     </div>
   )
 }

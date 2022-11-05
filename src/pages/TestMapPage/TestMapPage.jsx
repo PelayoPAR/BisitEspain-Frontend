@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import ReactMapGL, { Source, Layer, Marker, Popup } from "react-map-gl";
+import React, { useState } from "react"
+import ReactMapGL, { Source, Layer, Marker, Popup } from "react-map-gl"
 
 function TestMapPage() {
   const [viewport, setViewport] = useState({
@@ -8,7 +8,8 @@ function TestMapPage() {
     width: "100vw",
     height: "100vh",
     zoom: 5,
-  });
+  })
+
   // console.log(setViewport);
 
   // const dataOne = {
@@ -81,7 +82,7 @@ function TestMapPage() {
         [-5.98785, 37.37706],
       ],
     },
-  };
+  }
 
   return (
     <div>
@@ -116,7 +117,7 @@ function TestMapPage() {
         </ReactMapGL>
       </div>
     </div>
-  );
+  )
 }
 
-export default TestMapPage;
+export default TestMapPage

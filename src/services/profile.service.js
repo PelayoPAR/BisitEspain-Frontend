@@ -1,22 +1,22 @@
-import axios from "axios";
+import axios from "axios"
 
 class ProfileService {
   constructor() {
     this.api = axios.create({
       baseURL: process.env.REACT_APP_SERVER_URL || "http://localhost:5005",
-    });
+    })
 
     // Automatically set JWT token in the headers for every request
     this.api.interceptors.request.use((config) => {
       // Retrieve the JWT token from the local storage
-      const storedToken = localStorage.getItem("authToken");
+      const storedToken = localStorage.getItem("authToken")
 
       if (storedToken) {
-        config.headers = { Authorization: `Bearer ${storedToken}` };
+        config.headers = { Authorization: `Bearer ${storedToken}` }
       }
 
-      return config;
-    });
+      return config
+    })
   }
 
   //   // POST /api/examples
@@ -41,12 +41,11 @@ class ProfileService {
 
   // DELETE /api/examples/:id
   delete = (userId) => {
-    // console.log("auth service delete reached");
-    return this.api.delete(`/profile/${userId}`);
-  };
+    return this.api.delete(`/profile/${userId}`)
+  }
 }
 
 // Create one instance of the service
-const profileService = new ProfileService();
+const profileService = new ProfileService()
 
-export default profileService;
+export default profileService

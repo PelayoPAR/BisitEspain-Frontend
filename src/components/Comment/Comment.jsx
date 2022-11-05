@@ -12,7 +12,6 @@ function Comment({
 }) {
   const [editing, setEditing] = useState(false)
   const isOwner = userId === ownerId
-  //   console.log("Comment id at Comment ", commentId)
   return (
     <>
       {editing ? (
