@@ -9,7 +9,6 @@ function HomePage({ allProvinces, isError, isLoading }) {
 
   return (
     <div className="homeMain">
-      <h1>Home page</h1>
       <div className="provinceList">
         <ProvinceList
           allProvinces={allProvinces}

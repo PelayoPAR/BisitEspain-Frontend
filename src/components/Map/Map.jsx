@@ -19,7 +19,7 @@ const Map = ({ allProvinces }) => {
       const provinceHasContent = allProvinces.findIndex((province) => {
         return province.name === featureName;
       });
-      return provinceHasContent !== -1 ? "green" : "gray";
+      return provinceHasContent !== -1 ? "#ffc107" : "gray";
     },
     [allProvinces]
   );

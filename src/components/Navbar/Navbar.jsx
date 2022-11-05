@@ -9,18 +9,21 @@ function Navbar() {
   const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
 
   return (
-    <nav>
-      <Link to="/">
-        <button>Home</button>
+    <nav className="nav_bar">
+      <Link className="navIcon" to="/">
+        <img src="/img/spainContour.png" alt="profile" />
+        Bisit Espain
+      </Link>
+      <Link className="nav_bar_text" to="/">
+        Home
       </Link>
 
       {isLoggedIn && (
         <>
           <button onClick={logOutUser}>Logout</button>
 
-          <Link to={`profile/${user._id}`}>
-            <button>Profile</button>
-            {/* <img src="https://picsum.photos/id/402/200/300" style={{ width: 50, height: 50, borderRadius: 25}} alt="profile" /> */}
+          <Link className="nav_bar_text" to={`profile/${user._id}`}>
+            Profile
           </Link>
 
           <span>{user && user.name}</span>
@@ -29,13 +32,13 @@ function Navbar() {
 
       {!isLoggedIn && (
         <>
-          <Link to="/signup">
+          <Link className="nav_bar_text" to="/signup">
             {" "}
-            <button>Sign Up</button>{" "}
+            Sign Up{" "}
           </Link>
-          <Link to="/login">
+          <Link className="nav_bar_text" to="/login">
             {" "}
-            <button>Login</button>{" "}
+            Login{" "}
           </Link>
         </>
       )}
