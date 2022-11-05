@@ -1,13 +1,27 @@
 import React, { useState } from "react"
 import CommentInput from "../CommentInput/CommentInput"
 
-function Comment({ userId, message, commentId, ownerId }) {
+function Comment({
+  userId,
+  message,
+  commentId,
+  ownerId,
+  itemInfo,
+  setComments,
+}) {
   const [editing, setEditing] = useState(false)
   const isOwner = userId === ownerId
   //   console.log("Comment id at Comment ", commentId)
   return editing ? (
     <>
-      <CommentInput updateMode commentId={commentId} message={message} />
+      <CommentInput
+        setEditing={setEditing}
+        setComments={setComments}
+        updateMode
+        commentId={commentId}
+        message={message}
+        itemInfo={itemInfo}
+      />
       {isOwner && (
         <button
           onClick={() => {

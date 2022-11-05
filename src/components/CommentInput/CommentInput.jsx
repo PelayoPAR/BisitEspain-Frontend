@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import commentService from "../../services/comment.service"
 
 function CommentInput({
+  setEditing,
   updateMode,
   itemInfo,
   message = "",
@@ -10,7 +11,7 @@ function CommentInput({
 }) {
   // console.log("commentId at CommentInput ", commentId)
   const isLandmark = itemInfo?.contentType === "Landmark"
-  const _id = itemInfo ? itemInfo._id : commentId
+  const _id = itemInfo?._id
   const touristicItem = { _id, isLandmark }
   console.log("log for the sakes of console", touristicItem)
   const defaultRating = 5
@@ -29,24 +30,26 @@ function CommentInput({
   async function handleSubmit(e) {
     e.preventDefault()
     if (updateMode) {
-      await commentService
+      const updatedComment = await commentService
         .updateOneComment({ ...form, commentId })
-        .then((data) => {
-          console.log({ data })
-          // setComments(data.response.comments)
-          // inside array find by id and push it into setcomments
-        })
         .catch((error) => {
           console.error(error)
         })
+      console.log(updatedComment)
     } else {
       await commentService.createComment(form).catch((error) => {
         console.error(error)
       })
     }
 
-    // const response = await commentService.getComments(touristicItem)
-    // setComments(response.data.comments)
+    const response = await commentService.getComments(touristicItem)
+    console.log("CommentInput response", response)
+    isLandmark
+      ? setComments(response.data.comments)
+      : setComments(response.data.properties.comments)
+    if (updateMode) {
+      setEditing(false)
+    }
   }
 
   if (updateMode) {

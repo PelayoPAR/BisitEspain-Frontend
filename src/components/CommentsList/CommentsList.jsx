@@ -10,18 +10,20 @@ function CommentsList({ userId, itemInfo, comments, setComments }) {
   function handleClick(e) {
     e.preventDefault()
     //console.log("handleClick ", e);
-    handleSubmit(e)
+    readComments(e)
   }
 
-  function handleSubmit(e) {
+  function readComments(e) {
     e.preventDefault()
     //console.log("handleSubmit ", e);
-    console.log({ touristicItem })
+    console.log("CommentsList touristicItem", touristicItem)
     commentService
       .getComments(touristicItem)
       .then((response) => {
-        setComments(response.data.comments)
-        // console.log(response)
+        console.log("CommentsList response", response)
+        isLandmark
+          ? setComments(response.data.comments)
+          : setComments(response.data.properties.comments)
       })
       .catch((error) => {
         // setErrorMessage(error)
@@ -34,7 +36,7 @@ function CommentsList({ userId, itemInfo, comments, setComments }) {
   return (
     <div>
       <h3 onClick={(e) => handleClick(e)}>Display Comment</h3>
-      {/* {console.log("comments at display: ", comments)} */}
+      {console.log("comments at display: ", comments)}
       {!!comments.length && (
         <div>
           {comments.map((comment) => {
@@ -46,6 +48,8 @@ function CommentsList({ userId, itemInfo, comments, setComments }) {
 
             return (
               <Comment
+                setComments={setComments}
+                itemInfo={itemInfo}
                 key={comment?._id}
                 userId={userId}
                 message={message}
