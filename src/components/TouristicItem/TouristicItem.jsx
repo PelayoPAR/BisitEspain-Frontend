@@ -7,9 +7,9 @@ function TouristicItem({ itemInfo }) {
   const [comments, setComments] = useState([])
   const isLandmark = !!itemInfo.contentType
   const authData = useContext(AuthContext)
+  console.log("authData issss: ", authData)
   let userId = authData?.user ? authData.user._id : "guest"
 
-  // TODO: Add state variable, isEdit to set the comment form to create or update comment
   return (
     <div>
       <h2>

@@ -9,9 +9,14 @@ function Comment({
   ownerId,
   itemInfo,
   setComments,
+  ownerName,
+  commentDate,
 }) {
   const [editing, setEditing] = useState(false)
   const isOwner = userId === ownerId
+  const formattedDate = new Date(commentDate)
+  const propperDate = formattedDate.toLocaleString("en-GB")
+
   return (
     <>
       {editing ? (
@@ -24,7 +29,12 @@ function Comment({
           itemInfo={itemInfo}
         />
       ) : (
-        <div>{message}</div>
+        <div>
+          <p>
+            <b>{ownerName}</b> <small> - {propperDate} </small>
+          </p>
+          <p>{message}</p>
+        </div>
       )}
       {isOwner && (
         <div>

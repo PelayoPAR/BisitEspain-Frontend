@@ -34,10 +34,11 @@ function CommentsList({ userId, itemInfo, comments, setComments }) {
       {!!comments.length && displayComment && (
         <div>
           {comments.map((comment) => {
+            console.log(comment)
             const {
               message,
               _id: commentId,
-              owner: { _id: ownerId },
+              owner: { _id: ownerId, name: ownerName, createdAt: commentDate },
             } = comment
 
             return (
@@ -49,6 +50,8 @@ function CommentsList({ userId, itemInfo, comments, setComments }) {
                 message={message}
                 commentId={commentId}
                 ownerId={ownerId}
+                ownerName={ownerName}
+                commentDate={commentDate}
               />
             )
           })}

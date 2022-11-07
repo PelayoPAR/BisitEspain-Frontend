@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import ReactMapGL, { Source, Layer, Marker, Popup } from "react-map-gl"
+import MapRecenterBtn from "../MapRecenterBtn/MapRecenterBtn"
 
 function MapComponent({ selectedProvince }) {
   const [viewport, setViewport] = useState({
@@ -9,6 +10,7 @@ function MapComponent({ selectedProvince }) {
     height: "100vh",
     zoom: 8.5,
   })
+
   const [selectedLandmark, setSelectedLandmark] = useState(null)
   const [showPopup, setShowPopup] = useState(false)
 
@@ -20,7 +22,11 @@ function MapComponent({ selectedProvince }) {
         mapStyle="mapbox://styles/mapbox/streets-v9"
         onMove={(evt) => setViewport(evt.viewport)}
       >
-        {/* PENDING DYNAMIC RENDERING OF ROUTES */}
+        <MapRecenterBtn
+          selectedProvince={selectedProvince}
+          setViewport={setViewport}
+          viewport={viewport}
+        />
         <Source
           id="polylineLayer"
           type="geojson"
@@ -59,7 +65,10 @@ function MapComponent({ selectedProvince }) {
             </div>
             {showPopup && (
               <Popup
-                style={{ minWidth: "50px", minHeight: "50px" }}
+                style={{
+                  minWidth: "50px",
+                  minHeight: "50px",
+                }}
                 longitude={selectedLandmark.position.longitude}
                 latitude={selectedLandmark.position.latitude}
                 anchor="bottom"
@@ -69,6 +78,21 @@ function MapComponent({ selectedProvince }) {
                 {/* {console.log("URL is: ", selectedLandmark.URL)} */}
                 <div>
                   <h3>{selectedLandmark.name}</h3>
+                  {selectedLandmark.category === "Rural" && (
+                    <p style={{ color: "green" }}>
+                      {selectedLandmark.category}
+                    </p>
+                  )}
+                  {selectedLandmark.category === "Coastal" && (
+                    <p style={{ color: "dodgerblue" }}>
+                      {selectedLandmark.category}
+                    </p>
+                  )}
+                  {selectedLandmark.category === "Urban" && (
+                    <p style={{ color: "#ffc107" }}>
+                      {selectedLandmark.category}
+                    </p>
+                  )}
                   {selectedLandmark.URL.length > 5 && (
                     <p>
                       <a
