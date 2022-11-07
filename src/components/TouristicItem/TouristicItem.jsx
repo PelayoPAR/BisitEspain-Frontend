@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react"
 import { AuthContext } from "../../context/auth.context"
-import CommentsList from "../CommentsList/CommentsList"
+import CommentsList from "./CommentsList/CommentsList"
 import CommentInput from "../CommentInput/CommentInput"
 
 function TouristicItem({ itemInfo }) {

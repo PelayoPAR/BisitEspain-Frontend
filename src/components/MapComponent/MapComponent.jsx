@@ -1,6 +1,8 @@
 import React, { useState } from "react"
 import ReactMapGL, { Source, Layer, Marker, Popup } from "react-map-gl"
-import MapRecenterBtn from "../MapRecenterBtn/MapRecenterBtn"
+import MapRecenterBtn from "./MapRecenterBtn/MapRecenterBtn"
+import CategoryText from "./CategoryText/CategoryText"
+import "./MapComponent.css"
 
 function MapComponent({ selectedProvince }) {
   const [viewport, setViewport] = useState({
@@ -78,21 +80,7 @@ function MapComponent({ selectedProvince }) {
                 {/* {console.log("URL is: ", selectedLandmark.URL)} */}
                 <div>
                   <h3>{selectedLandmark.name}</h3>
-                  {selectedLandmark.category === "Rural" && (
-                    <p style={{ color: "green" }}>
-                      {selectedLandmark.category}
-                    </p>
-                  )}
-                  {selectedLandmark.category === "Coastal" && (
-                    <p style={{ color: "dodgerblue" }}>
-                      {selectedLandmark.category}
-                    </p>
-                  )}
-                  {selectedLandmark.category === "Urban" && (
-                    <p style={{ color: "#ffc107" }}>
-                      {selectedLandmark.category}
-                    </p>
-                  )}
+                  <CategoryText category={selectedLandmark.category} />
                   {selectedLandmark.URL.length > 5 && (
                     <p>
                       <a

@@ -1,6 +1,6 @@
 import React, { useState } from "react"
-import CommentInput from "../CommentInput/CommentInput"
-import CommentRemover from "../CommentRemover/CommentRemover"
+import CommentInput from "../../../CommentInput/CommentInput"
+import CommentRemover from "./CommentRemover/CommentRemover"
 
 function Comment({
   userId,

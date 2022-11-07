@@ -1,6 +1,6 @@
 import React, { useState } from "react"
-import commentService from "../../services/comment.service"
-import Comment from "../Comment/Comment"
+import commentService from "../../../services/comment.service"
+import Comment from "./Comment/Comment"
 
 function CommentsList({ userId, itemInfo, comments, setComments }) {
   const isLandmark = itemInfo.contentType === "Landmark"

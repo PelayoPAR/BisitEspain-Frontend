@@ -4,7 +4,7 @@ import provinces from "./assets/gadm41_ESP_2_TOPO.json"
 import { useEffect, useRef, useMemo } from "react"
 import { select, geoPath, geoMercator } from "d3"
 import * as topojson from "topojson"
-import "./Map.css"
+import "./HomeMap.css"
 import { useNavigate } from "react-router-dom"
 
 const Map = ({ allProvinces }) => {
@@ -17,8 +17,6 @@ const Map = ({ allProvinces }) => {
     provinces,
     provinces.objects.adminRegions
   )
-
-  // console.log(baseGeoData)
 
   const geoData = useMemo(() => {
     const provinceHasContent = (feature) => {

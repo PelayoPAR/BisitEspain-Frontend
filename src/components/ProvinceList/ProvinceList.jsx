@@ -1,5 +1,5 @@
 import React from "react"
-import ProvinceItem from "../ProvinceItem/ProvinceItem"
+import ProvinceItem from "./ProvinceItem/ProvinceItem"
 import { useNavigate } from "react-router-dom"
 
 function ProvinceList({ allProvinces, isError, isLoading }) {

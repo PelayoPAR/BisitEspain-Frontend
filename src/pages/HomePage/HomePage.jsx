@@ -1,6 +1,6 @@
-import ProvinceList from "../../components/ProvinceList/ProvinceList";
-import "./HomePage.css";
-import HomeMap from "../../components/Map";
+import ProvinceList from "../../components/ProvinceList/ProvinceList"
+import "./HomePage.css"
+import HomeMap from "../../components/HomeMap"
 // import { useState } from "react";
 
 function HomePage({ allProvinces, isError, isLoading }) {
@@ -18,7 +18,7 @@ function HomePage({ allProvinces, isError, isLoading }) {
         <HomeMap allProvinces={allProvinces} />
       </div>
     </div>
-  );
+  )
 }
 
-export default HomePage;
+export default HomePage

@@ -127,45 +127,6 @@ function CommentInput({
       </div>
     )
   }
-
-  // return (
-  //   <div>
-  //     <h3>Create Comment</h3>
-  //     <form onSubmit={handleSubmit}>
-  //       <label>
-  //         Message
-  //         <input
-  //           type="text"
-  //           name="message"
-  //           onChange={handleChange}
-  //           value={form.message}
-  //           rows="5"
-  //           cols="5"
-  //         />
-  //       </label>
-  //       <br />
-  //       <label>
-  //         Rating
-  //         <select
-  //           name="rating"
-  //           id="rating"
-  //           defaultValue={defaultRating}
-  //           onChange={handleChange}
-  //         >
-  //           <option value={0}>0</option>
-  //           <option value={1}>1</option>
-  //           <option value={2}>2</option>
-  //           <option value={3}>3</option>
-  //           <option value={4}>4</option>
-  //           <option value={5}>5</option>
-  //         </select>
-  //       </label>
-  //       <br />
-
-  //       <button type="submit">Add Comment</button>
-  //     </form>
-  //   </div>
-  // )
 }
 
 export default CommentInput

@@ -1,5 +1,5 @@
 import React from "react"
-import commentService from "../../services/comment.service"
+import commentService from "../../../../../services/comment.service"
 
 function CommentRemover({ setComments, itemInfo, commentId }) {
   const isLandmark = itemInfo.contentType === "Landmark"

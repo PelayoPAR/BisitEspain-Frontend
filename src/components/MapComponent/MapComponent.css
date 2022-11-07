@@ -5,38 +5,11 @@
     max-width: 20px;
 }
 
-.mapboxgl-popup {
+.mapboxgl-popup-content {
     color: #F3F3DD;
     background-color: #91785D;
     border-color: #91785D;
     max-width: 250px;
     box-shadow: 3px 3px 2px #8B5D33;
     font-family: 'Oswald';
-}
-
-/* .mapbox-popup {
-    background-color: yellow;
-    color: green
-}
-
-.mapbox-popup-div {
-    color: green
-}
-
-.mapbox-popup-content {
-    background-color: yellow;
-    color: green
-} */
-
-
-/* .urbanTag {
-    color: gold;
-}
-
-.coastalTag {
-    color: dodgerblue
-} */
-
-/* .ruralTag {
-    color: green;
-} */
+  }
