@@ -5,9 +5,10 @@ import { useEffect, useRef, useMemo } from "react"
 import { select, geoPath, geoMercator } from "d3"
 import * as topojson from "topojson"
 import "./HomeMap.css"
+import React from "react"
 import { useNavigate } from "react-router-dom"
 
-const Map = ({ allProvinces }) => {
+const Map = ({ allProvinces, setHighlightedProvince }) => {
   const svgRef = useRef()
   const wrapperRef = useRef()
   const dimensions = useResizeObserver(wrapperRef)
@@ -73,12 +74,14 @@ const Map = ({ allProvinces }) => {
           .style("fill", "red")
           .transition(500)
           .style("transform", "translateX(-10px)")
+        setHighlightedProvince(feature.properties.NAME_2)
       })
       .on("mouseout", function (event, feature) {
         select(this)
           .style("fill", (feature) => feature.properties.color)
           .transition(500)
           .style("transform", "translateX(0px)")
+        setHighlightedProvince("")
       })
       .on("click", function (event, feature) {
         if (feature.properties.hasContent) {
@@ -90,7 +93,7 @@ const Map = ({ allProvinces }) => {
           return
         }
       })
-  }, [geoData, dimensions, allProvinces, navigate])
+  }, [geoData, dimensions, allProvinces, navigate, setHighlightedProvince])
 
   // function to
   const viewBoxCoords = ({ width, height }) => {
@@ -122,4 +125,4 @@ const Map = ({ allProvinces }) => {
   )
 }
 
-export default Map
+export default React.memo(Map)

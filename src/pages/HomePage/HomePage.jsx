@@ -1,11 +1,11 @@
 import ProvinceList from "../../components/ProvinceList/ProvinceList"
 import "./HomePage.css"
 import HomeMap from "../../components/HomeMap"
-// import { useState } from "react";
+import { useState } from "react"
 
 function HomePage({ allProvinces, isError, isLoading }) {
-  // For future use in order to link HomeMap and ProvinceList
-  // const [highlightedProvince, setHighlightedProvince] = useState(null);
+  // For future use in order to link HomeMap and ProvinceList:
+  const [highlightedProvince, setHighlightedProvince] = useState(null)
 
   return (
     <div className="homeMain">
@@ -14,8 +14,14 @@ function HomePage({ allProvinces, isError, isLoading }) {
           allProvinces={allProvinces}
           isError={isError}
           isLoading={isLoading}
+          highlightedProvince={highlightedProvince}
+          setHighlightedProvince={setHighlightedProvince}
         />
-        <HomeMap allProvinces={allProvinces} />
+
+        <HomeMap
+          allProvinces={allProvinces}
+          setHighlightedProvince={setHighlightedProvince}
+        />
       </div>
     </div>
   )
