@@ -5,8 +5,6 @@ function ProvinceItem({ province, navigate, highlightedProvince }) {
     return highlightedProvince === province.name
   }
 
-  console.log("highlightedProvince at ProvinceItem", highlightedProvince)
-
   function defineStyle(highlighted) {
     if (highlighted) {
       return { color: "#ffc107" }

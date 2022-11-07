@@ -10,7 +10,6 @@ function ProvinceList({
   setHighlightedProvince,
 }) {
   const navigate = useNavigate()
-  console.log("highlighteeeeeddd", highlightedProvince)
 
   return (
     <div>

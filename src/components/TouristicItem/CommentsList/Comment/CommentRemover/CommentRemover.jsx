@@ -15,7 +15,6 @@ function CommentRemover({ setComments, itemInfo, commentId }) {
     await commentService
       .getComments(touristicItem)
       .then((response) => {
-        console.log("CommentRemover response", response)
         isLandmark
           ? setComments(response.data.comments)
           : setComments(response.data.properties.comments)

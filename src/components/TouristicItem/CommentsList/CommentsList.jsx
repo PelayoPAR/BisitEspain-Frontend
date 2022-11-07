@@ -34,7 +34,6 @@ function CommentsList({ userId, itemInfo, comments, setComments }) {
       {!!comments.length && displayComment && (
         <div>
           {comments.map((comment) => {
-            console.log(comment)
             const {
               message,
               _id: commentId,

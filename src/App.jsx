@@ -10,7 +10,6 @@ import Navbar from "./components/Navbar/Navbar"
 import IsPrivate from "./components/IsPrivate/IsPrivate"
 import IsAnon from "./components/IsAnon/IsAnon"
 import ProvinceDetailsPage from "./pages/ProvinceDetailsPage/ProvinceDetailsPage"
-import TestMapPage from "./pages/TestMapPage/TestMapPage"
 
 import axios from "axios"
 import { useState, useEffect } from "react"
@@ -119,7 +118,6 @@ function App() {
           element={<NotFoundPage />}
           name="NotFoundPage"
         />
-        <Route path="/testmap" element={<TestMapPage />} name="TestMapPage" />
       </Routes>
     </div>
   )

@@ -43,8 +43,6 @@ const Map = ({ allProvinces, setHighlightedProvince }) => {
     if (!geoData) return
     if (!dimensions) return
 
-    // console.log(geoData)
-
     const { width, height } = dimensions
 
     const svg = select(svgRef.current)
@@ -95,7 +93,6 @@ const Map = ({ allProvinces, setHighlightedProvince }) => {
       })
   }, [geoData, dimensions, allProvinces, navigate, setHighlightedProvince])
 
-  // function to
   const viewBoxCoords = ({ width, height }) => {
     const coefs = [0.3, 0, 0.8, 0.6]
     return `

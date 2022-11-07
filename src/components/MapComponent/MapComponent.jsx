@@ -77,7 +77,6 @@ function MapComponent({ selectedProvince }) {
                 closeOnClick="false"
                 onClose={() => setShowPopup(false)}
               >
-                {/* {console.log("URL is: ", selectedLandmark.URL)} */}
                 <div>
                   <h3>{selectedLandmark.name}</h3>
                   <CategoryText category={selectedLandmark.category} />
