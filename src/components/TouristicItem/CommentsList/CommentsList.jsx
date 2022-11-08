@@ -31,12 +31,13 @@ function CommentsList({ userId, itemInfo, comments, setComments }) {
 
   return (
     <div>
-      <h3 onClick={(e) => handleClick(e)}>Display Comment</h3>
+      <h3 onClick={(e) => handleClick(e)}>Display Comments</h3>
       {!!comments.length && displayComment && (
         <div>
           {comments.map((comment) => {
             const {
               message,
+              rating,
               _id: commentId,
               owner: { _id: ownerId, name: ownerName, createdAt: commentDate },
             } = comment
@@ -48,6 +49,7 @@ function CommentsList({ userId, itemInfo, comments, setComments }) {
                 key={comment?._id}
                 userId={userId}
                 message={message}
+                rating={rating}
                 commentId={commentId}
                 ownerId={ownerId}
                 ownerName={ownerName}

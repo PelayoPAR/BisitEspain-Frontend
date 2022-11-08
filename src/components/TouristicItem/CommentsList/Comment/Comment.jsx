@@ -5,6 +5,7 @@ import CommentRemover from "./CommentRemover/CommentRemover"
 function Comment({
   userId,
   message,
+  rating,
   commentId,
   ownerId,
   itemInfo,
@@ -33,7 +34,9 @@ function Comment({
           <p>
             <b>{ownerName}</b> <small> - {propperDate} </small>
           </p>
-          <p>{message}</p>
+          <p>
+            {message} - <small> Rating: {rating}</small>
+          </p>
         </div>
       )}
       {isOwner && (

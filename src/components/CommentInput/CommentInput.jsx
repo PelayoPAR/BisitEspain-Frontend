@@ -90,7 +90,7 @@ function CommentInput({
   } else {
     return (
       <div>
-        <h3>Create Comment</h3>
+        <h3>Leave a Comment</h3>
         <form onSubmit={handleSubmit}>
           <label>
             Message
