@@ -6,10 +6,28 @@
 }
 
 .mapboxgl-popup-content {
-    color: #F3F3DD;
-    background-color: #91785D;
-    border-color: #91785D;
+    color: #000;
+    background-color: #fdf5e6;
     max-width: 250px;
-    box-shadow: 3px 3px 2px #8B5D33;
-    font-family: 'Oswald';
+    box-shadow: 3px 3px 2px #dcdcdc;
+    font-family: 'Montserrat';
+  }
+
+  .mapboxgl-popup-content a {
+    font-weight: 600;
+  }
+  
+  .urbanTag {
+    font-weight: 600;
+    color: #505050;
+  }
+
+  .ruralTag {
+    font-weight: 600;
+    color: #008000;
+  }
+
+  .coastalTag {
+    font-weight: 600;
+    color: #1E90FF;
   }

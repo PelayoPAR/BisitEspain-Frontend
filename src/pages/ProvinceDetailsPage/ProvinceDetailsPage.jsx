@@ -2,6 +2,7 @@ import React from "react"
 import { useParams } from "react-router-dom"
 import MapComponent from "../../components/MapComponent/MapComponent"
 import TouristicItem from "../../components/TouristicItem/TouristicItem"
+import "./ProvinceDetailsPage.css"
 
 function ProvinceDetailsPage({ allProvinces, isError, isLoading }) {
   const { provinceId } = useParams()
@@ -11,14 +12,14 @@ function ProvinceDetailsPage({ allProvinces, isError, isLoading }) {
   })
 
   return (
-    <div>
-      <h2>{singleProvince[0].name}</h2>
-      <p>{singleProvince[0].description}</p>
-
-      <div>
+    <div className="provinceDetailsMain">
+      <div className="provinceInfo">
+        <h2 className="mainTitle">{singleProvince[0].name}</h2>
+        {/* TODO: Add Province description? */}
+        {/* <p>{singleProvince[0].description}</p> */}
         {singleProvince[0].contents.landmarks && (
           <div>
-            <h2>Landmarks</h2>
+            <h2 className="secondaryTitle">Landmarks</h2>
             <ul>
               {singleProvince[0].contents.landmarks.map((landmark) => {
                 return <TouristicItem key={landmark._id} itemInfo={landmark} />
@@ -28,7 +29,7 @@ function ProvinceDetailsPage({ allProvinces, isError, isLoading }) {
         )}
         {singleProvince[0].contents.routes && (
           <div>
-            <h2>Routes</h2>
+            <h2 className="secondaryTitle">Routes</h2>
             <ul>
               {singleProvince[0].contents.routes.map((route) => {
                 return <TouristicItem key={route._id} itemInfo={route} />
@@ -36,9 +37,9 @@ function ProvinceDetailsPage({ allProvinces, isError, isLoading }) {
             </ul>
           </div>
         )}
-        <div>
-          <MapComponent selectedProvince={singleProvince[0]} />
-        </div>
+      </div>
+      <div className="provinceMap">
+        <MapComponent selectedProvince={singleProvince[0]} />
       </div>
     </div>
   )

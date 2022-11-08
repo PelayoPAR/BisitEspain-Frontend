@@ -1,0 +1,17 @@
+.provinceDetailsMain {
+    display: flex;
+}
+
+.provinceInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.mainTitle {
+    font-size: 2rem;
+    margin: 2rem;
+}
+
+.secondaryTitle {
+    margin: 1.5rem
+}

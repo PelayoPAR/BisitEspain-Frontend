@@ -66,6 +66,9 @@ const Map = ({ allProvinces, setHighlightedProvince }) => {
       .attr("d", (feature) => pathGenerator(feature))
       .attr("fill", (feature) => feature.properties.color)
       .attr("stroke", "white")
+      .style("cursor", (feature) =>
+        feature.properties.hasContent ? "pointer" : "default"
+      )
       .on("mouseover", function (event, feature) {
         window.document.querySelector(".regionContainer").appendChild(this)
         select(this)

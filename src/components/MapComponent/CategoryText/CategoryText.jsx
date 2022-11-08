@@ -3,11 +3,9 @@ import React from "react"
 function CategoryText({ category }) {
   return (
     <>
-      {category === "Rural" && <p style={{ color: "green" }}>{category}</p>}
-      {category === "Coastal" && (
-        <p style={{ color: "dodgerblue" }}>{category}</p>
-      )}
-      {category === "Urban" && <p style={{ color: "#ffc107" }}>{category}</p>}
+      {category === "Rural" && <p className="ruralTag">{category}</p>}
+      {category === "Coastal" && <p className="coastalTag">{category}</p>}
+      {category === "Urban" && <p className="urbanTag">{category}</p>}
     </>
   )
 }
