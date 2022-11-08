@@ -1,6 +1,5 @@
 /* CSS RESET (Pending)*/
 
-
 .homeMain {
  display: flex;
  flex-direction: column;
@@ -10,6 +9,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    color: var(--clr-primary);
 }
 
 .provinceList ul {
@@ -17,6 +18,7 @@
     padding: 0;
     margin: 0;
 }
+
 
 /* .provinceList {
 display: flex;
