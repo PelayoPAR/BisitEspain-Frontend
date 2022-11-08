@@ -8,6 +8,7 @@ function CommentsList({ userId, itemInfo, comments, setComments }) {
   const [displayComment, setDisplayComment] = useState(false)
 
   const touristicItem = { _id, isLandmark }
+
   function handleClick(e) {
     e.preventDefault()
     setDisplayComment(!displayComment)

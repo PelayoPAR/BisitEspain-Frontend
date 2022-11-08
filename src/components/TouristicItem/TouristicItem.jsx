@@ -14,6 +14,9 @@ function TouristicItem({ itemInfo }) {
       <h2>
         <li>{isLandmark ? itemInfo.name : itemInfo.properties.name}</li>
       </h2>
+      <p>
+        {isLandmark ? itemInfo.description : itemInfo.properties.description}
+      </p>
       <CommentsList
         userId={userId}
         itemInfo={itemInfo}

@@ -13,6 +13,7 @@ function ProvinceDetailsPage({ allProvinces, isError, isLoading }) {
   return (
     <div>
       <h2>{singleProvince[0].name}</h2>
+      <p>{singleProvince[0].description}</p>
 
       <div>
         {singleProvince[0].contents.landmarks && (
