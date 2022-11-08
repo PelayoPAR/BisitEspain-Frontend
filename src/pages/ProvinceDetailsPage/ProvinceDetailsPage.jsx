@@ -20,21 +20,21 @@ function ProvinceDetailsPage({ allProvinces, isError, isLoading }) {
         {singleProvince[0].contents.landmarks && (
           <div>
             <h2 className="secondaryTitle">Landmarks</h2>
-            <ul>
+            <div>
               {singleProvince[0].contents.landmarks.map((landmark) => {
                 return <TouristicItem key={landmark._id} itemInfo={landmark} />
               })}
-            </ul>
+            </div>
           </div>
         )}
         {singleProvince[0].contents.routes && (
           <div>
             <h2 className="secondaryTitle">Routes</h2>
-            <ul>
+            <div>
               {singleProvince[0].contents.routes.map((route) => {
                 return <TouristicItem key={route._id} itemInfo={route} />
               })}
-            </ul>
+            </div>
           </div>
         )}
       </div>

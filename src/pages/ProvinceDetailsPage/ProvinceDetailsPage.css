@@ -5,6 +5,9 @@
 .provinceInfo {
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
+    overflow-y: scroll;
+    max-height: 87vh;
 }
 
 .mainTitle {
@@ -14,4 +17,9 @@
 
 .secondaryTitle {
     margin: 1.5rem
+}
+
+.provinceMap {
+    min-width: 800px;
+    /* min-width must be same as ReactMapGL inline style width */
 }

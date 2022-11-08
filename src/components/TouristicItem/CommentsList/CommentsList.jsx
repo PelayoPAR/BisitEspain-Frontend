@@ -1,11 +1,17 @@
-import React, { useState } from "react"
+import React from "react"
 import commentService from "../../../services/comment.service"
 import Comment from "./Comment/Comment"
 
-function CommentsList({ userId, itemInfo, comments, setComments }) {
+function CommentsList({
+  userId,
+  itemInfo,
+  comments,
+  setComments,
+  displayComment,
+  setDisplayComment,
+}) {
   const isLandmark = itemInfo.contentType === "Landmark"
   const { _id } = itemInfo
-  const [displayComment, setDisplayComment] = useState(false)
 
   const touristicItem = { _id, isLandmark }
 

@@ -8,6 +8,7 @@ function CommentInput({
   message = "",
   setComments,
   commentId,
+  setDisplayComment,
 }) {
   const isLandmark = itemInfo?.contentType === "Landmark"
   const _id = itemInfo?._id
@@ -37,6 +38,7 @@ function CommentInput({
       await commentService.createComment(form).catch((error) => {
         console.error(error)
       })
+      setDisplayComment(true)
     }
 
     const response = await commentService.getComments(touristicItem)

@@ -8,27 +8,39 @@ function TouristicItem({ itemInfo }) {
   const isLandmark = !!itemInfo.contentType
   const authData = useContext(AuthContext)
   let userId = authData?.user ? authData.user._id : "guest"
+  const [displayComment, setDisplayComment] = useState(false)
+  const [displayTouristicInfo, setDisplayTouristicInfo] = useState(false)
 
   return (
     <div>
-      <h2>
-        <li>{isLandmark ? itemInfo.name : itemInfo.properties.name}</li>
-      </h2>
-      <p>
-        {isLandmark ? itemInfo.description : itemInfo.properties.description}
-      </p>
-      <CommentsList
-        userId={userId}
-        itemInfo={itemInfo}
-        comments={comments}
-        setComments={setComments}
-      />
-      {userId !== "guest" && (
-        <CommentInput
-          itemInfo={itemInfo}
-          comments={comments}
-          setComments={setComments}
-        />
+      <div onClick={() => setDisplayTouristicInfo(!displayTouristicInfo)}>
+        <h2>{isLandmark ? itemInfo.name : itemInfo.properties.name}</h2>
+      </div>
+      {displayTouristicInfo && (
+        <>
+          <p>
+            {isLandmark
+              ? itemInfo.description
+              : itemInfo.properties.description}
+          </p>
+          <CommentsList
+            userId={userId}
+            itemInfo={itemInfo}
+            comments={comments}
+            setComments={setComments}
+            displayComment={displayComment}
+            setDisplayComment={setDisplayComment}
+          />
+
+          {userId !== "guest" && (
+            <CommentInput
+              itemInfo={itemInfo}
+              comments={comments}
+              setComments={setComments}
+              setDisplayComment={setDisplayComment}
+            />
+          )}
+        </>
       )}
     </div>
   )
