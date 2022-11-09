@@ -1,5 +1,6 @@
-import React, { useState } from "react"
-import commentService from "../../services/comment.service"
+import React, { useState } from "react";
+import commentService from "../../services/comment.service";
+import "./CommentInput.css";
 
 function CommentInput({
   setEditing,
@@ -10,50 +11,50 @@ function CommentInput({
   commentId,
   setDisplayComment,
 }) {
-  const isLandmark = itemInfo?.contentType === "Landmark"
-  const _id = itemInfo?._id
-  const touristicItem = { _id, isLandmark }
-  const defaultRating = 5
+  const isLandmark = itemInfo?.contentType === "Landmark";
+  const _id = itemInfo?._id;
+  const touristicItem = { _id, isLandmark };
+  const defaultRating = 5;
   const [form, setForm] = useState({
     message,
     rating: defaultRating,
     isLandmark,
     _id,
-  })
+  });
 
   function handleChange(evt) {
-    const { name, value } = evt.target
-    setForm({ ...form, [name]: value })
+    const { name, value } = evt.target;
+    setForm({ ...form, [name]: value });
   }
 
   async function handleSubmit(e) {
-    e.preventDefault()
+    e.preventDefault();
     if (updateMode) {
       await commentService
         .updateOneComment({ ...form, commentId })
         .catch((error) => {
-          console.error(error)
-        })
+          console.error(error);
+        });
     } else {
       await commentService.createComment(form).catch((error) => {
-        console.error(error)
-      })
-      setDisplayComment(true)
+        console.error(error);
+      });
+      setDisplayComment(true);
     }
 
-    const response = await commentService.getComments(touristicItem)
+    const response = await commentService.getComments(touristicItem);
     isLandmark
       ? setComments(response.data.comments)
-      : setComments(response.data.properties.comments)
+      : setComments(response.data.properties.comments);
     if (updateMode) {
-      setEditing(false)
+      setEditing(false);
     }
   }
 
   if (updateMode) {
     return (
-      <div>
-        <h3>Modify Comment</h3>
+      <div className="createEditCommentWrapper">
+        <h3 className="commentTitle">Modify Comment</h3>
         <form onSubmit={handleSubmit}>
           <label>
             Message
@@ -88,11 +89,11 @@ function CommentInput({
           <button type="submit">Edit Comment</button>
         </form>
       </div>
-    )
+    );
   } else {
     return (
-      <div>
-        <h3>Leave a Comment</h3>
+      <div className="createEditCommentWrapper">
+        <h3 className="commentTitle">Leave a Comment</h3>
         <form onSubmit={handleSubmit}>
           <label>
             Message
@@ -127,8 +128,8 @@ function CommentInput({
           <button type="submit">Add Comment</button>
         </form>
       </div>
-    )
+    );
   }
 }
 
-export default CommentInput
+export default CommentInput;

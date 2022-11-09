@@ -1,0 +1,8 @@
+.createEditCommentWrapper {
+    padding: 0 0 1rem 1.5rem;
+    line-height: 1.75rem;
+}
+
+.commentTitle {
+    font-size: 1.20rem;
+}

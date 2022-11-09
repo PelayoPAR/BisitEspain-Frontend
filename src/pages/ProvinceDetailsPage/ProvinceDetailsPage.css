@@ -12,11 +12,12 @@
 
 .mainTitle {
     font-size: 2rem;
-    margin: 2rem;
+    margin: 2rem 0 0 1.5rem;
 }
 
 .secondaryTitle {
-    margin: 1.5rem
+    margin: 1.5rem;
+    font-weight: 300;
 }
 
 .provinceMap {

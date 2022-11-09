@@ -1,6 +1,7 @@
-import React, { useState } from "react"
-import CommentInput from "../../../CommentInput/CommentInput"
-import CommentRemover from "./CommentRemover/CommentRemover"
+import React, { useState } from "react";
+import CommentInput from "../../../CommentInput/CommentInput";
+import CommentRemover from "./CommentRemover/CommentRemover";
+import "./Comment.css";
 
 function Comment({
   userId,
@@ -13,13 +14,13 @@ function Comment({
   ownerName,
   commentDate,
 }) {
-  const [editing, setEditing] = useState(false)
-  const isOwner = userId === ownerId
-  const formattedDate = new Date(commentDate)
-  const propperDate = formattedDate.toLocaleString("en-GB")
+  const [editing, setEditing] = useState(false);
+  const isOwner = userId === ownerId;
+  const formattedDate = new Date(commentDate);
+  const propperDate = formattedDate.toLocaleString("en-GB");
 
   return (
-    <>
+    <div className="commentCard">
       {editing ? (
         <CommentInput
           setEditing={setEditing}
@@ -43,7 +44,7 @@ function Comment({
         <div>
           <button
             onClick={() => {
-              setEditing(!editing)
+              setEditing(!editing);
             }}
           >
             {editing ? "Cancel" : "Edit"}
@@ -55,8 +56,8 @@ function Comment({
           />
         </div>
       )}
-    </>
-  )
+    </div>
+  );
 }
 
-export default Comment
+export default Comment;

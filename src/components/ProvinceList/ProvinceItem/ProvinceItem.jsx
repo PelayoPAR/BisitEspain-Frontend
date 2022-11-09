@@ -1,28 +1,30 @@
-import React from "react"
+import React from "react";
+import "./ProvinceItem.css";
 
 function ProvinceItem({ province, navigate, highlightedProvince }) {
   function isHighlighted() {
-    return highlightedProvince === province.name
+    return highlightedProvince === province.name;
   }
 
   function defineStyle(highlighted) {
     if (highlighted) {
-      return { color: "#ffc107" }
+      return { color: "#FF0000" };
     } else {
-      return {}
+      return {};
     }
   }
 
   return (
     <div
+      className="provinceName"
       style={defineStyle(isHighlighted())}
       onClick={() => {
-        navigate(`/${province._id}`)
+        navigate(`/${province._id}`);
       }}
     >
       {province.name}
     </div>
-  )
+  );
 }
 
-export default ProvinceItem
+export default ProvinceItem;
