@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import commentService from "../../services/comment.service";
+import Button from "@mui/material/Button";
 import "./CommentInput.css";
 
 function CommentInput({
@@ -125,7 +126,13 @@ function CommentInput({
           </label>
           <br />
 
-          <button type="submit">Add Comment</button>
+          <Button
+            // sx={{ backgroundColor: "#ffc107" }}
+            variant="contained"
+            type="submit"
+          >
+            Add Comment
+          </Button>
         </form>
       </div>
     );

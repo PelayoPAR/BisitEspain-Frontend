@@ -8,6 +8,12 @@
     padding-left: 1.5rem;
 }
 
+.touristicItemTitle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .touristicItemName {
     padding: 1rem 0 1rem 1.5rem;
     font-size: 1.30rem;

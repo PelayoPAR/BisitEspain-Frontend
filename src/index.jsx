@@ -5,13 +5,27 @@ import "./index.css";
 import App from "./App";
 import { BrowserRouter as Router } from "react-router-dom";
 import { AuthProviderWrapper } from "./context/auth.context";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
+const theme = createTheme({
+  status: {
+    danger: "#e53e3e",
+  },
+  palette: {
+    primary: {
+      main: "#ffc107",
+    },
+  },
+});
 
 root.render(
   <Router>
     <AuthProviderWrapper>
-      <App />
+      <ThemeProvider theme={theme}>
+        <App />
+      </ThemeProvider>
     </AuthProviderWrapper>
   </Router>
 );

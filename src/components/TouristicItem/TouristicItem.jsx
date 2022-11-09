@@ -2,6 +2,8 @@ import React, { useState, useContext } from "react";
 import { AuthContext } from "../../context/auth.context";
 import CommentsList from "./CommentsList/CommentsList";
 import CommentInput from "../CommentInput/CommentInput";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import "./TouristicItem.css";
 
 function TouristicItem({ itemInfo }) {
@@ -19,9 +21,12 @@ function TouristicItem({ itemInfo }) {
           className="touristicItem"
           onClick={() => setDisplayTouristicInfo(!displayTouristicInfo)}
         >
-          <h2 className="touristicItemName">
-            {isLandmark ? itemInfo.name : itemInfo.properties.name}
-          </h2>
+          <div className="touristicItemTitle">
+            <h2 className="touristicItemName">
+              {isLandmark ? itemInfo.name : itemInfo.properties.name}
+            </h2>
+            {displayTouristicInfo ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+          </div>
           <img
             src={isLandmark ? itemInfo.images : itemInfo.properties.images}
             alt="Espain pic"
