@@ -15,6 +15,10 @@ function TouristicItem({ itemInfo }) {
     <div>
       <div onClick={() => setDisplayTouristicInfo(!displayTouristicInfo)}>
         <h2>{isLandmark ? itemInfo.name : itemInfo.properties.name}</h2>
+        <img
+          src={isLandmark ? itemInfo.images : itemInfo.properties.images}
+          alt="Espain pic"
+        ></img>
       </div>
       {displayTouristicInfo && (
         <>
