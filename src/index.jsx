@@ -10,12 +10,12 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 const theme = createTheme({
-  status: {
-    danger: "#e53e3e",
-  },
   palette: {
     primary: {
       main: "#ffc107",
+    },
+    error: {
+      main: "#ff143d",
     },
   },
 });

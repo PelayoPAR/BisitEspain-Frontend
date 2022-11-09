@@ -1,6 +1,8 @@
 import React from "react";
 import commentService from "../../../services/comment.service";
 import Comment from "./Comment/Comment";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import "./CommentsList.css";
 
 function CommentsList({
@@ -38,17 +40,21 @@ function CommentsList({
 
   return (
     <div className="commentWrapper">
-      <h3 onClick={(e) => handleClick(e)} className="commentTitle">
-        Display Comments
-      </h3>
+      <div className="displayCommentsExpander">
+        <h3 onClick={(e) => handleClick(e)} className="commentTitle">
+          Display Comments
+        </h3>
+        {displayComment ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+      </div>
       {!!comments.length && displayComment && (
         <div>
           {comments.map((comment) => {
             const {
               message,
               rating,
+              createdAt: commentDate,
               _id: commentId,
-              owner: { _id: ownerId, name: ownerName, createdAt: commentDate },
+              owner: { _id: ownerId, name: ownerName },
             } = comment;
 
             return (

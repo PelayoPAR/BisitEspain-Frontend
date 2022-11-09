@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import commentService from "../../services/comment.service";
 import Button from "@mui/material/Button";
+import TextField from "@mui/material/TextField";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
 import "./CommentInput.css";
 
 function CommentInput({
@@ -55,82 +60,78 @@ function CommentInput({
   if (updateMode) {
     return (
       <div className="createEditCommentWrapper">
-        <h3 className="commentTitle">Modify Comment</h3>
-        <form onSubmit={handleSubmit}>
-          <label>
-            Message
-            <input
-              type="text"
-              name="message"
-              onChange={handleChange}
-              value={form.message}
-              rows="5"
-              cols="5"
-            />
-          </label>
-          <br />
-          <label>
-            Rating
-            <select
+        <form className="commentInputForm" onSubmit={handleSubmit}>
+          <TextField
+            sx={{ width: "70%" }}
+            name="message"
+            onChange={handleChange}
+            value={form.message}
+            id="standard-basic"
+            label="Edit Comment"
+            variant="standard"
+          />
+
+          <FormControl>
+            <InputLabel id="addCommentRatingLabel">Rating</InputLabel>
+            <Select
+              sx={{ minWidth: "70px" }}
+              labelId="addCommentRatingLabel"
+              label="rating"
               name="rating"
               id="rating"
-              defaultValue={form.rating}
+              defaultValue={defaultRating}
               onChange={handleChange}
             >
-              <option value={0}>0</option>
-              <option value={1}>1</option>
-              <option value={2}>2</option>
-              <option value={3}>3</option>
-              <option value={4}>4</option>
-              <option value={5}>5</option>
-            </select>
-          </label>
-          <br />
+              <MenuItem value={0}>0</MenuItem>
+              <MenuItem value={1}>1</MenuItem>
+              <MenuItem value={2}>2</MenuItem>
+              <MenuItem value={3}>3</MenuItem>
+              <MenuItem value={4}>4</MenuItem>
+              <MenuItem value={5}>5</MenuItem>
+            </Select>
+          </FormControl>
 
-          <button type="submit">Edit Comment</button>
+          <Button variant="contained" type="submit">
+            Edit Comment
+          </Button>
         </form>
       </div>
     );
   } else {
     return (
       <div className="createEditCommentWrapper">
-        <h3 className="commentTitle">Leave a Comment</h3>
-        <form onSubmit={handleSubmit}>
-          <label>
-            Message
-            <input
-              type="text"
-              name="message"
-              onChange={handleChange}
-              value={form.message}
-              rows="5"
-              cols="5"
-            />
-          </label>
-          <br />
-          <label>
-            Rating
-            <select
+        <form className="commentInputForm" onSubmit={handleSubmit}>
+          <TextField
+            sx={{ width: "70%" }}
+            name="message"
+            onChange={handleChange}
+            value={form.message}
+            id="standard-basic"
+            label="Leave a Comment"
+            variant="standard"
+          />
+
+          <FormControl>
+            <InputLabel id="addCommentRatingLabel">Rating</InputLabel>
+            <Select
+              sx={{ minWidth: "70px" }}
+              labelId="addCommentRatingLabel"
+              label="rating"
               name="rating"
               id="rating"
               defaultValue={defaultRating}
               onChange={handleChange}
             >
-              <option value={0}>0</option>
-              <option value={1}>1</option>
-              <option value={2}>2</option>
-              <option value={3}>3</option>
-              <option value={4}>4</option>
-              <option value={5}>5</option>
-            </select>
-          </label>
-          <br />
+              <MenuItem value={0}>0</MenuItem>
+              <MenuItem value={1}>1</MenuItem>
+              <MenuItem value={2}>2</MenuItem>
+              <MenuItem value={3}>3</MenuItem>
+              <MenuItem value={4}>4</MenuItem>
+              <MenuItem value={5}>5</MenuItem>
+            </Select>
+          </FormControl>
 
-          <Button
-            // sx={{ backgroundColor: "#ffc107" }}
-            variant="contained"
-            type="submit"
-          >
+          <Button variant="contained" type="submit">
             Add Comment
           </Button>
         </form>

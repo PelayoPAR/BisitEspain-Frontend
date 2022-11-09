@@ -3,6 +3,8 @@
     line-height: 1.75rem;
 }
 
-.commentTitle {
-    font-size: 1.20rem;
+.commentInputForm {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

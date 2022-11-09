@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 function MapRecenterBtn({ selectedProvince, viewport, setViewport }) {
   const handleClick = () => {
@@ -7,9 +7,8 @@ function MapRecenterBtn({ selectedProvince, viewport, setViewport }) {
       latitude: selectedProvince.center.latitude,
       width: "100vw",
       height: "100vh",
-      zoom: 8.5,
-    })
-  }
+    });
+  };
 
   return (
     <button
@@ -19,7 +18,7 @@ function MapRecenterBtn({ selectedProvince, viewport, setViewport }) {
     >
       Back to Center
     </button>
-  )
+  );
 }
 
-export default MapRecenterBtn
+export default MapRecenterBtn;

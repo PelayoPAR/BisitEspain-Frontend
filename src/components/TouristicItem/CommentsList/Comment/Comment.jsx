@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import CommentInput from "../../../CommentInput/CommentInput";
 import CommentRemover from "./CommentRemover/CommentRemover";
+import Button from "@mui/material/Button";
 import "./Comment.css";
 
 function Comment({
@@ -42,13 +43,15 @@ function Comment({
       )}
       {isOwner && (
         <div>
-          <button
+          <Button
+            sx={{ marginRight: "1rem" }}
+            variant="contained"
             onClick={() => {
               setEditing(!editing);
             }}
           >
             {editing ? "Cancel" : "Edit"}
-          </button>
+          </Button>
           <CommentRemover
             commentId={commentId}
             itemInfo={itemInfo}

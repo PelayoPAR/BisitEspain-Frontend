@@ -3,6 +3,7 @@ import { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/auth.context";
 import authService from "../../services/auth.service";
+import Button from "@mui/material/Button";
 
 function LoginPage() {
   const [email, setEmail] = useState("");
@@ -60,7 +61,9 @@ function LoginPage() {
           onChange={handlePassword}
         />
 
-        <button type="submit">Login</button>
+        <Button variant="contained" type="submit">
+          Login
+        </Button>
       </form>
       {errorMessage && <p className="error-message">{errorMessage}</p>}
 
