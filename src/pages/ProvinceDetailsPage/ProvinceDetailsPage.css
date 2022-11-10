@@ -23,4 +23,5 @@
 .provinceMap {
     min-width: 800px;
     /* min-width must be same as ReactMapGL inline style width */
+    padding: 1rem;
 }

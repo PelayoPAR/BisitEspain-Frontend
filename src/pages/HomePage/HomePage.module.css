@@ -5,6 +5,18 @@
  flex-direction: column;
 }
 
+.homeTitle {
+    padding: 2rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.homeTitleH1 {
+    font-size: 2.5rem;
+    color: #ff143d
+}
+
 .provinceList {
     display: flex;
     justify-content: center;

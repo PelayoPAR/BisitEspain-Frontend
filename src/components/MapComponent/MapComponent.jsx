@@ -1,8 +1,8 @@
-import React, { useState } from "react"
-import ReactMapGL, { Source, Layer, Marker, Popup } from "react-map-gl"
-import MapRecenterBtn from "./MapRecenterBtn/MapRecenterBtn"
-import CategoryText from "./CategoryText/CategoryText"
-import "./MapComponent.css"
+import React, { useState } from "react";
+import ReactMapGL, { Source, Layer, Marker, Popup } from "react-map-gl";
+import MapRecenterBtn from "./MapRecenterBtn/MapRecenterBtn";
+import CategoryText from "./CategoryText/CategoryText";
+import "./MapComponent.css";
 
 function MapComponent({ selectedProvince }) {
   const [viewport, setViewport] = useState({
@@ -11,10 +11,10 @@ function MapComponent({ selectedProvince }) {
     width: "100vw",
     height: "100vh",
     zoom: 8.5,
-  })
+  });
 
-  const [selectedLandmark, setSelectedLandmark] = useState(null)
-  const [showPopup, setShowPopup] = useState(false)
+  const [selectedLandmark, setSelectedLandmark] = useState(null);
+  const [showPopup, setShowPopup] = useState(false);
 
   return (
     <div style={{ height: "800px", width: "800px" }}>
@@ -54,13 +54,26 @@ function MapComponent({ selectedProvince }) {
             key={landmark._id}
             latitude={landmark.position.latitude}
             longitude={landmark.position.longitude}
+            onClick={() => {
+              console.log("clickity");
+              setViewport({
+                latitude: landmark.position.latitude,
+                longitude: landmark.position.longitude,
+                zoom: 12,
+              });
+              // this._map.flyTo([
+              //   landmark.position.latitude,
+              //   landmark.position.longitude,
+              //   2500,
+              // ]);
+            }}
           >
             <div
               className="mapMarker"
               onClick={(evt) => {
-                evt.stopPropagation()
-                setSelectedLandmark(landmark)
-                setShowPopup(true)
+                evt.stopPropagation();
+                setSelectedLandmark(landmark);
+                setShowPopup(true);
               }}
             >
               <img src="/img/32x32.png" alt="Marker" />
@@ -98,7 +111,7 @@ function MapComponent({ selectedProvince }) {
         ))}
       </ReactMapGL>
     </div>
-  )
+  );
 }
 
-export default MapComponent
+export default MapComponent;

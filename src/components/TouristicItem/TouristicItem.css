@@ -10,7 +10,16 @@
 .touristicItem img {
     width: 500px;
     padding-left: 1.5rem;
+    /* border-radius: 30px; */
 }
+
+/* .touristicItemImg{
+    overflow: hidden;
+}
+
+.touristicItemImg img{
+    border-radius: 30px;
+} */
 
 .touristicItemTitle {
     display: flex;

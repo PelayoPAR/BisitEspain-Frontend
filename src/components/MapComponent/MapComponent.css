@@ -11,6 +11,8 @@
     max-width: 250px;
     box-shadow: 3px 3px 2px #dcdcdc;
     font-family: 'Montserrat';
+    line-height: 1.5rem;
+    text-align: center;
   }
 
   .mapboxgl-popup-content a {
@@ -30,4 +32,8 @@
   .coastalTag {
     font-weight: 600;
     color: #1E90FF;
+  }
+
+  .mapMarker img{
+    cursor: pointer;
   }

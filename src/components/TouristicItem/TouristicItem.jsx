@@ -27,10 +27,12 @@ function TouristicItem({ itemInfo }) {
             </h2>
             {displayTouristicInfo ? <ExpandLessIcon /> : <ExpandMoreIcon />}
           </div>
-          <img
-            src={isLandmark ? itemInfo.images : itemInfo.properties.images}
-            alt="Espain pic"
-          ></img>
+          <div className="touristicItemImg">
+            <img
+              src={isLandmark ? itemInfo.images : itemInfo.properties.images}
+              alt="Espain pic"
+            ></img>
+          </div>
         </div>
 
         {displayTouristicInfo && (
