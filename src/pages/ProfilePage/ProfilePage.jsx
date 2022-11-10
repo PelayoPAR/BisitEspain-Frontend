@@ -13,11 +13,6 @@ function ProfilePage() {
   const [responseMessage, setResponseMessage] = useState("");
   const { logOutUser } = useContext(AuthContext);
   const authData = useContext(AuthContext);
-  // const formattedDate = new Date(userDate);
-  // const propperDate = formattedDate.toLocaleString("en-GB");
-  // const userDate = authData.user.exp;
-
-  console.log(authData);
 
   const handleSubmit = () => {
     const requestBody = userId;

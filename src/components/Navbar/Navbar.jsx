@@ -12,7 +12,7 @@ function Navbar() {
     <nav className="nav_bar">
       <Link className="navIcon" to="/">
         <img src="/img/spainContour.png" alt="profile" />
-        <p>Bisit Espain</p>
+        <p className="titleOfTitles">Bisit Espain</p>
       </Link>
       <Link className="nav_bar_text" to="/">
         <p>Home</p>

@@ -1,5 +1,9 @@
 /* CSS RESET (Pending)*/
 
+body {
+    overflow: hidden;
+}
+
 .homeMain {
  display: flex;
  flex-direction: column;

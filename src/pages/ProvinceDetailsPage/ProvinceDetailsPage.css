@@ -8,20 +8,54 @@
     flex-grow: 1;
     overflow-y: scroll;
     max-height: 87vh;
+    padding: 1.5rem
 }
 
 .mainTitle {
     font-size: 2rem;
-    margin: 2rem 0 0 1.5rem;
+    margin: 2rem 0 0 0;
 }
 
 .secondaryTitle {
-    margin: 1.5rem;
+    margin: 1.5rem 0;
     font-weight: 300;
 }
 
 .provinceMap {
     min-width: 800px;
     /* min-width must be same as ReactMapGL inline style width */
-    padding: 1rem;
+    padding-top: 2rem;
 }
+
+::-webkit-scrollbar-button {
+    height: 12px;
+    }
+
+::-webkit-scrollbar {
+    width: 12px;
+    height: 30px;
+    overflow: scroll;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: rgb(90, 90, 90);
+    height: 10px;
+    border-radius: 20px;
+  }
+
+/* ::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(61, 52, 52, 0.3);
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar
+{
+	width: 6px;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+	background-color: #000000;
+} */

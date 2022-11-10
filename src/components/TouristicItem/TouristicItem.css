@@ -9,17 +9,22 @@
 
 .touristicItem img {
     width: 500px;
-    padding-left: 1.5rem;
+    /* padding-left: 1.5rem; */
     /* border-radius: 30px; */
 }
 
 /* .touristicItemImg{
+    border-radius: 30px;
+} */
+
+.touristicItemImg{
     overflow: hidden;
+    border-radius: 30px;
 }
 
 .touristicItemImg img{
     border-radius: 30px;
-} */
+}
 
 .touristicItemTitle {
     display: flex;
@@ -28,7 +33,7 @@
 }
 
 .touristicItemName {
-    padding: 1rem 0 1rem 1.5rem;
+    padding: 1rem 0 1rem 0;
     font-size: 1.30rem;
 }
 

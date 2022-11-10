@@ -42,7 +42,7 @@ function Comment({
         </div>
       )}
       {isOwner && (
-        <div>
+        <div className="cancelEditButton">
           <Button
             sx={{ marginRight: "1rem" }}
             variant="outlined"

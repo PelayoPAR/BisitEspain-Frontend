@@ -27,6 +27,10 @@
     color: black;
 }
 
+.nav_bar_text:hover {
+    color: #ff143d;
+}
+
 .logoutButton {
     cursor: pointer;
 }
