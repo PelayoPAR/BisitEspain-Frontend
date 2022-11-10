@@ -9,8 +9,15 @@ function ProfilePage() {
   const [errorMessage, setErrorMessage] = useState(undefined);
   const { userId } = useParams();
   const navigate = useNavigate();
-  const { logOutUser } = useContext(AuthContext);
+
   const [responseMessage, setResponseMessage] = useState("");
+  const { logOutUser } = useContext(AuthContext);
+  const authData = useContext(AuthContext);
+  // const formattedDate = new Date(userDate);
+  // const propperDate = formattedDate.toLocaleString("en-GB");
+  // const userDate = authData.user.exp;
+
+  console.log(authData);
 
   const handleSubmit = () => {
     const requestBody = userId;
@@ -28,11 +35,22 @@ function ProfilePage() {
       });
   };
   return (
-    <div>
-      <h1>Profile page</h1>
+    <div className="profileMain">
+      <h2>Profile page</h2>
+
+      <div className="profileInfo">
+        <p>
+          Your user name is: <b>{authData.user.name}</b>
+        </p>
+        <p>
+          Your email account is: <b>{authData.user.email}</b>
+        </p>
+      </div>
       <Button
+        sx={{ width: "10rem" }}
         variant="contained"
         type="submit"
+        color="error"
         onClick={() => {
           handleSubmit();
         }}

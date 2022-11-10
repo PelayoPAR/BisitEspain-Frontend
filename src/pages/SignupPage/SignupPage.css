@@ -1,0 +1,41 @@
+.SignupMain{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem 0;
+    line-height: 2.5rem;
+}
+
+.signupForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem;
+    padding: 1rem 2rem;
+    border: 1px solid lightgray;
+    box-sizing: border-box;
+}
+
+.signupInput{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.signupEmailInput{
+    display: flex;
+    padding: 1rem 2rem;
+}
+
+.signupPwInput{
+    display: flex;
+    padding: 1rem 2rem;
+}
+
+.signupUsernameInput{
+    display: flex;
+    padding: 1rem 2rem;
+}

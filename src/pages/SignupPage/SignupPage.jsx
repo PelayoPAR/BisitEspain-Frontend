@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import authService from "../../services/auth.service";
 import Button from "@mui/material/Button";
+import TextField from "@mui/material/TextField";
 
 function SignupPage() {
   const [email, setEmail] = useState("");
@@ -48,27 +49,64 @@ function SignupPage() {
   };
 
   return (
-    <div className="SignupPage">
+    <div className="SignupMain">
       <h1>Sign Up</h1>
 
       <form onSubmit={handleSignupSubmit}>
-        <label>Email:</label>
-        <input type="email" name="email" value={email} onChange={handleEmail} />
+        <div className="signupForm">
+          <div className="signupInput">
+            <div className="signupEmailInput">
+              <TextField
+                id="outlined-basic"
+                variant="outlined"
+                type="email"
+                name="email"
+                label="Email"
+                value={email}
+                onChange={handleEmail}
+              />
+            </div>
+            <div className="signupPwInput">
+              <TextField
+                id="outlined-basic"
+                variant="outlined"
+                type="password"
+                name="password"
+                label="Password"
+                value={password}
+                onChange={handlePassword}
+              />
+            </div>
+            <div className="signupUsernameInput">
+              <TextField
+                id="outlined-basic"
+                variant="outlined"
+                type="text"
+                name="name"
+                label="Username"
+                value={name}
+                onChange={handleName}
+              />
+            </div>
+          </div>
+          {/* <label>Email:</label>
+        <input type="email" name="email" value={email} onChange={handleEmail} /> */}
 
-        <label>Password:</label>
+          {/* <label>Password:</label>
         <input
           type="password"
           name="password"
           value={password}
           onChange={handlePassword}
-        />
+        /> */}
 
-        <label>Name:</label>
-        <input type="text" name="name" value={name} onChange={handleName} />
+          {/* <label>Name:</label>
+        <input type="text" name="name" value={name} onChange={handleName} /> */}
 
-        <Button variant="contained" type="submit">
-          Sign Up
-        </Button>
+          <Button sx={{ width: "10rem" }} variant="contained" type="submit">
+            Sign Up
+          </Button>
+        </div>
       </form>
 
       {errorMessage && <p className="error-message">{errorMessage}</p>}

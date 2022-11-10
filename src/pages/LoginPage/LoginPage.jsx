@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/auth.context";
 import authService from "../../services/auth.service";
 import Button from "@mui/material/Button";
+import TextField from "@mui/material/TextField";
 
 function LoginPage() {
   const [email, setEmail] = useState("");
@@ -46,24 +47,57 @@ function LoginPage() {
   };
 
   return (
-    <div className="LoginPage">
+    <div className="loginMain">
       <h1>Login</h1>
 
       <form onSubmit={handleLoginSubmit}>
-        <label>Email:</label>
-        <input type="email" name="email" value={email} onChange={handleEmail} />
+        <div className="loginForm">
+          <div className="loginInput">
+            <div className="loginEmailInput">
+              <TextField
+                // sx={{ height: "1rem" }}
+                id="outlined-basic"
+                variant="outlined"
+                type="email"
+                name="email"
+                label="Email"
+                value={email}
+                onChange={handleEmail}
+                // helperText="Email"
+              />
+            </div>
+            <div className="loginPwInput">
+              <TextField
+                id="outlined-basic"
+                variant="outlined"
+                type="password"
+                name="password"
+                label="Password"
+                value={password}
+                onChange={handlePassword}
+              />
+            </div>
+          </div>
+          {/* <label>Email:</label>
+          <input
+            type="email"
+            name="email"
+            value={email}
+            onChange={handleEmail}
+          /> */}
 
-        <label>Password:</label>
-        <input
-          type="password"
-          name="password"
-          value={password}
-          onChange={handlePassword}
-        />
+          {/* <label>Password:</label>
+          <input
+            type="password"
+            name="password"
+            value={password}
+            onChange={handlePassword}
+          /> */}
 
-        <Button variant="contained" type="submit">
-          Login
-        </Button>
+          <Button sx={{ width: "10rem" }} variant="contained" type="submit">
+            Login
+          </Button>
+        </div>
       </form>
       {errorMessage && <p className="error-message">{errorMessage}</p>}
 

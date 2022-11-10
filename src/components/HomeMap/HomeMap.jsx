@@ -98,7 +98,7 @@ const Map = ({ allProvinces, setHighlightedProvince }) => {
           .querySelector(".regionContainer")
           .appendChild(thisRegion);
         select(`.${feature.properties.NAME_2}`)
-          .style("fill", "red")
+          .style("fill", "#ff143d")
           .transition(500)
           .style("transform", "translateX(-10px)");
         setHighlightedProvince(feature.properties.NAME_2);

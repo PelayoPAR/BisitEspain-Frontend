@@ -26,7 +26,7 @@ function CommentRemover({ setComments, itemInfo, commentId }) {
   };
 
   return (
-    <Button variant="contained" onClick={handleClick}>
+    <Button variant="outlined" color="error" onClick={handleClick}>
       Delete
     </Button>
   );

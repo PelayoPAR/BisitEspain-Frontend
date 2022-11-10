@@ -45,7 +45,7 @@ function Comment({
         <div>
           <Button
             sx={{ marginRight: "1rem" }}
-            variant="contained"
+            variant="outlined"
             onClick={() => {
               setEditing(!editing);
             }}

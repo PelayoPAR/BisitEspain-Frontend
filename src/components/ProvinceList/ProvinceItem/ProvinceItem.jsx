@@ -8,7 +8,7 @@ function ProvinceItem({ province, navigate, highlightedProvince }) {
 
   function defineStyle(highlighted) {
     if (highlighted) {
-      return { color: "#FF0000" };
+      return { color: "#ff143d" };
     } else {
       return {};
     }
