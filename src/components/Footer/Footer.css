@@ -1,0 +1,25 @@
+.footerMain {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #ffc107;
+    
+}
+
+a {
+    text-decoration: none;
+    padding: 1rem;
+    cursor: pointer;
+    color: #000;
+    font-weight: 300;
+}
+
+a:hover {
+    color: #ff143d
+}
+
+.flexyFoot {
+    display: flex;
+    justify-content: center;
+}

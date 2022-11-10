@@ -34,3 +34,7 @@
 .logoutButton {
     cursor: pointer;
 }
+
+.titleOfTitles:hover{
+    color: #ff143d;
+}

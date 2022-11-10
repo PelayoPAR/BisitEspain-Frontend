@@ -9,17 +9,18 @@ function HomePage({ allProvinces, isError, isLoading }) {
 
   return (
     <div className={`${styles.homeMain}`}>
-      <div className={styles.homeTitle}>
-        <h1 className={styles.homeTitleH1}>Esplore. Esperience. Espain.</h1>
-      </div>
       <div className={styles.provinceList}>
-        <ProvinceList
-          allProvinces={allProvinces}
-          isError={isError}
-          isLoading={isLoading}
-          highlightedProvince={highlightedProvince}
-          setHighlightedProvince={setHighlightedProvince}
-        />
+        <div className={styles.homeText}>
+          <h1 className={styles.homeTitleH1}>Esplore. Esperience. Espain.</h1>
+
+          <ProvinceList
+            allProvinces={allProvinces}
+            isError={isError}
+            isLoading={isLoading}
+            highlightedProvince={highlightedProvince}
+            setHighlightedProvince={setHighlightedProvince}
+          />
+        </div>
 
         <HomeMap
           allProvinces={allProvinces}
