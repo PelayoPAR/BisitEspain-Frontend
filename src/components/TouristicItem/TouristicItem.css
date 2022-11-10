@@ -37,6 +37,10 @@
     font-size: 1.30rem;
 }
 
+.touristicItemName:hover {
+    color: #ff143d;
+}
+
 .touristicItemDescription {
     padding: 1rem;
 }

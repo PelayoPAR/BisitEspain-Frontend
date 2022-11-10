@@ -4,7 +4,10 @@
 
 .displayCommentsExpander {
     display: flex;
-    
+}
+
+.displayCommentsExpander:hover {
+    color: #ff143d
 }
 
 .commentTitle {
