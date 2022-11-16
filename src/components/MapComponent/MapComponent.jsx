@@ -17,7 +17,7 @@ function MapComponent({ selectedProvince }) {
   const [showPopup, setShowPopup] = useState(false);
 
   return (
-    <div style={{ height: "800px", width: "800px" }}>
+    <div style={{ height: "100%", width: "100%" }}>
       <ReactMapGL
         {...viewport}
         mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_ACCESS_TOKEN}

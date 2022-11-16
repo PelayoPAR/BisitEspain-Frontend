@@ -91,7 +91,7 @@ function CommentInput({
             </Select>
           </FormControl>
 
-          <Button variant="contained" type="submit">
+          <Button sx={{ margin: "0 1rem" }} variant="contained" type="submit">
             Edit Comment
           </Button>
         </form>
@@ -102,7 +102,7 @@ function CommentInput({
       <div className="createEditCommentWrapper">
         <form className="commentInputForm" onSubmit={handleSubmit}>
           <TextField
-            sx={{ width: "70%" }}
+            sx={{ width: "70%", margin: "0 1rem" }}
             name="message"
             onChange={handleChange}
             value={form.message}
@@ -112,9 +112,14 @@ function CommentInput({
           />
 
           <FormControl>
-            <InputLabel id="addCommentRatingLabel">Rating</InputLabel>
+            <InputLabel
+              sx={{ minWidth: "85px", textAlign: "center" }}
+              id="addCommentRatingLabel"
+            >
+              Rating
+            </InputLabel>
             <Select
-              sx={{ minWidth: "70px" }}
+              sx={{ minWidth: "70px", margin: "0 1rem" }}
               labelId="addCommentRatingLabel"
               label="rating"
               name="rating"
@@ -131,7 +136,7 @@ function CommentInput({
             </Select>
           </FormControl>
 
-          <Button variant="contained" type="submit">
+          <Button sx={{ margin: "0 1rem" }} variant="contained" type="submit">
             Add Comment
           </Button>
         </form>
