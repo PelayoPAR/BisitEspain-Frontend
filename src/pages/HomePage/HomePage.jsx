@@ -12,16 +12,17 @@ function HomePage({ allProvinces, isError, isLoading }) {
       <div className={styles.provinceList}>
         <div className={styles.homeText}>
           <h1 className={styles.homeTitleH1}>Esplore. Esperience. Espain.</h1>
-
-          <ProvinceList
-            allProvinces={allProvinces}
-            isError={isError}
-            isLoading={isLoading}
-            highlightedProvince={highlightedProvince}
-            setHighlightedProvince={setHighlightedProvince}
-          />
+          <div className={styles.actualProvinceList}>
+            <ProvinceList
+              allProvinces={allProvinces}
+              isError={isError}
+              isLoading={isLoading}
+              highlightedProvince={highlightedProvince}
+              setHighlightedProvince={setHighlightedProvince}
+            />
+          </div>
         </div>
-        <div>
+        <div className={styles.homeMapDiv}>
           <HomeMap
             allProvinces={allProvinces}
             setHighlightedProvince={setHighlightedProvince}

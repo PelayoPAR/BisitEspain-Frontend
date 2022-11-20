@@ -7,3 +7,10 @@
   width: 100%;
   height: 100%
 }
+
+@media screen and (max-width: 375px) {
+  .mapWrapper {
+    height: 40vh
+    /* width: 30%; */
+  }
+}
