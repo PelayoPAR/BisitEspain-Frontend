@@ -21,11 +21,12 @@ function HomePage({ allProvinces, isError, isLoading }) {
             setHighlightedProvince={setHighlightedProvince}
           />
         </div>
-
-        <HomeMap
-          allProvinces={allProvinces}
-          setHighlightedProvince={setHighlightedProvince}
-        />
+        <div>
+          <HomeMap
+            allProvinces={allProvinces}
+            setHighlightedProvince={setHighlightedProvince}
+          />
+        </div>
       </div>
     </div>
   );

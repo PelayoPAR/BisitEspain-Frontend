@@ -43,6 +43,17 @@ body {
     margin: 0;
 }
 
+@media screen and (max-width: 375px) {
+    .provinceList {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap-reverse;
+        color: var(--clr-primary);
+    }
+}
+
 
 /* .provinceList {
 display: flex;
