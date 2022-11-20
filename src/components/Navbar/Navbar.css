@@ -38,3 +38,21 @@
 .titleOfTitles:hover{
     color: #ff143d;
 }
+
+@media screen and (min-width: 375px) {
+    .nav_bar {
+        display: flex;
+        justify-content: space-evenly;
+
+    }
+
+    .nav_bar_text {
+        font-size: 0.75rem;
+    }
+
+    .navIcon img {
+        max-height: 50px; 
+        border-radius: 5%;
+        padding: 0;
+    }
+}

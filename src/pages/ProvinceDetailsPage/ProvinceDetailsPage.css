@@ -1,6 +1,4 @@
 /* For Desktop View */
-@media screen and (min-width: 1024px) {
-    
 .provinceDetailsMain {
     display: flex;
 }
@@ -10,7 +8,7 @@
     flex-direction: column;
     flex-grow: 1;
     overflow-y: scroll;
-    max-height: 87vh;
+    /* max-height: 87vh; */
     padding: 1.5rem
 }
 
@@ -46,10 +44,74 @@
     border-radius: 20px;
   }
 
-  }
+/* For small laptop */
+@media screen and (min-width: 1024px) {
+    
+.provinceDetailsMain {
+    display: flex;
+}
 
-  @media screen and (min-width: 731px) {
+.provinceInfo {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    overflow-y: scroll;
+    /* max-height: 87vh; */
+    padding: 1.5rem
+}
 
+.mainTitle {
+    font-size: 2rem;
+    margin: 2rem 0 0 0;
+}
+
+.secondaryTitle {
+    margin: 1.5rem 0;
+    font-weight: 300;
+}
+
+.provinceMap {
+    min-width: 45%;
+    /* min-width must be same as ReactMapGL inline style width */
+    padding-top: 2rem;
+}
+
+}
+
+  /* For tablet and landscape */
+  @media screen and (min-width: 375px) {
+
+.provinceDetailsMain {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+}
+
+.provinceInfo {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    overflow-y: scroll;
+    
+    padding: 1.5rem
+}
+
+.mainTitle {
+    font-size: 2rem;
+    margin: 2rem 0 0 0;
+}
+
+.secondaryTitle {
+    margin: 1.5rem 0;
+    font-weight: 300;
+}
+
+.provinceMap {
+    min-width: 80%;
+    min-height: 30vh;
+    /* min-width must be same as ReactMapGL inline style width */
+    padding-top: 2rem;
+}
   }
 
 /* 
