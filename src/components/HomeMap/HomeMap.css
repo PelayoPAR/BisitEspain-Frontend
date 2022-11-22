@@ -25,3 +25,12 @@
     height: 50vh
   }
 }
+
+@media screen and (min-width: 1024px) {
+  .mapWrapper {
+    width: 50vw;
+    /* max-height: 60vh; */
+    /* overflow-y: none; */
+    margin-bottom: 0;
+  }
+}

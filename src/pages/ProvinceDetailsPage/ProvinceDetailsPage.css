@@ -162,3 +162,10 @@
         padding-bottom: 0.5rem
     }
   }
+
+  @media screen and (min-width: 1024px) {
+    .provinceMap {
+        /* min-width must be same as ReactMapGL inline style width */
+        padding: 0.5rem 1.7rem 3rem 0
+    }
+  }

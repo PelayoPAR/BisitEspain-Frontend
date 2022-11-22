@@ -66,3 +66,19 @@
         padding: 1rem 0;
     }
 }
+
+@media screen and (min-width: 1024px) {
+    .touristicItemWrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .touristicItem img {
+        max-width: 80vw;
+    }
+
+    .touristicItemDescription {
+        padding: 1rem 0;
+    }
+}

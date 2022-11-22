@@ -149,3 +149,30 @@ body {
         margin-top: 1.5rem;
     }
 }
+
+@media screen and (min-width: 1024px) {
+    .homeText {
+        height: 70vh;
+        margin-top: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        
+    }
+
+
+.homeTitleH1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    max-width: 50%;
+    font-size: 2.25rem;
+    color: #ff143d
+}
+
+
+
+}

@@ -56,3 +56,12 @@
         padding: 0;
     }
 }
+
+@media screen and (min-width: 1024px) {
+
+    .navIcon img {
+        max-height: 50px; 
+        border-radius: 5%;
+        padding: 0;
+    }
+}

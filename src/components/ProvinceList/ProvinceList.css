@@ -56,3 +56,18 @@
         font-size: 3rem;
     }
 }
+
+@media screen and (min-width: 1024px) {
+    .provinceListWrapper {
+        width: 50vw;
+        display: flex;
+        flex-direction: column;
+        /* align-items: flex-start; */
+    }
+
+    .provinceTitle {
+        font-size: 2.25rem;
+        padding-left: 0
+    }
+}
+
