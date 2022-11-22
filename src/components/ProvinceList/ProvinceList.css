@@ -57,7 +57,7 @@
     }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1024px) and (max-width: 1200px) {
     .provinceListWrapper {
         width: 50vw;
         display: flex;

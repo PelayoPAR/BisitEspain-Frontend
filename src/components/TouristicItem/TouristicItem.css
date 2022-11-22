@@ -67,7 +67,7 @@
     }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1024px) and (max-width: 1200px) {
     .touristicItemWrapper {
         display: flex;
         flex-direction: column;
