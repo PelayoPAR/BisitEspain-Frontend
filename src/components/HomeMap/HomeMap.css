@@ -8,9 +8,14 @@
   height: 100%
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 480px) {
   .mapWrapper {
     height: 40vh
-    /* width: 30%; */
+  }
+}
+
+@media screen and (min-width:481px) and (max-width: 768px) {
+  .mapWrapper {
+    height: 55vh
   }
 }

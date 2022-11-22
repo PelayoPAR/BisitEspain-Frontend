@@ -39,7 +39,7 @@
     padding: 1rem;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 480px) {
     .touristicItemWrapper {
         display: flex;
         flex-direction: column;
@@ -48,5 +48,21 @@
 
     .touristicItem img {
         max-width: 80vw;
+    }
+}
+
+@media screen and (min-width:481px) and (max-width: 768px) {
+    .touristicItemWrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .touristicItem img {
+        max-width: 80vw;
+    }
+
+    .touristicItemDescription {
+        padding: 1rem 0;
     }
 }

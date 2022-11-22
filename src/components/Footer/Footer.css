@@ -24,7 +24,7 @@ a:hover {
     justify-content: center;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 480px) {
     a {
         font-size: 0.75rem;
         text-decoration: none;

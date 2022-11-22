@@ -15,7 +15,7 @@ function TouristicItem({ itemInfo }) {
   const [displayTouristicInfo, setDisplayTouristicInfo] = useState(false);
 
   return (
-    <div>
+    <div className="touristicItemMain">
       <div className="touristicItemWrapper">
         <div
           className="touristicItem"

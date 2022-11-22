@@ -13,9 +13,22 @@
     color: #ff143d;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 480px) {
     .provinceName {
         font-size: 1rem;
+        font-weight: 600;
+        padding-bottom: 1rem;
+        padding-left: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        cursor: pointer;
+    }
+}
+
+@media screen and (min-width:481px) and (max-width: 768px) {
+    .provinceName {
+        font-size: 1.5rem;
         font-weight: 600;
         padding-bottom: 1rem;
         padding-left: 1rem;
