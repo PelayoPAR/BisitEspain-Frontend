@@ -145,7 +145,20 @@
         padding-top: 1rem;
         padding-bottom: 0.5rem
     }
-    
   }
 
-
+  @media screen and (min-width:769px) and (max-width: 1023px) {
+    .provinceDetailsMain {
+        display: flex;
+        flex-wrap: wrap-reverse;
+        justify-content: center;
+    }
+    
+    .provinceMap {
+        min-width: 80%;
+        min-height: 30vh;
+        /* min-width must be same as ReactMapGL inline style width */
+        padding-top: 1rem;
+        padding-bottom: 0.5rem
+    }
+  }

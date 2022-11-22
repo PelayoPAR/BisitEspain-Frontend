@@ -118,3 +118,34 @@ body {
 }
 
 }
+
+@media screen and (min-width:769px) and (max-width: 1023px) {
+    .provinceList {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap-reverse;
+        color: var(--clr-primary);   
+    }
+
+    .homeText {
+        height: 60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-start
+    }
+    
+    .homeTitleH1 {
+        max-width: 80%;
+        font-size: 3rem;
+        color: #ff143d;
+        padding: 2rem 0 0 1rem
+    }   
+    
+    
+    .actualProvinceList{
+        margin-top: 1.5rem;
+    }
+}
