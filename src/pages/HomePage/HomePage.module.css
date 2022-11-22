@@ -15,7 +15,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    align-items: center
+    align-items: center;
 }
 
 .homeTitleH1 {
@@ -158,7 +158,6 @@ body {
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
-        
     }
 
 
@@ -172,7 +171,5 @@ body {
     font-size: 2.25rem;
     color: #ff143d
 }
-
-
 
 }

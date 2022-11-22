@@ -28,9 +28,11 @@
 
 @media screen and (min-width: 1024px) and (max-width: 1200px) {
   .mapWrapper {
-    width: 50vw;
+    /* width: 50vw; */
     /* max-height: 60vh; */
     /* overflow-y: none; */
-    margin-bottom: 0;
+    /* margin-bottom: 0; */
+    height: 10vh;
+  width: 10vw;
   }
 }
