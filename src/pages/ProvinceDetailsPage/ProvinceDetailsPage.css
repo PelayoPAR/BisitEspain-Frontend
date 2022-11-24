@@ -28,6 +28,7 @@
     padding: 1rem 0;
 }
 
+/* scrollbar for Chrome, Safari... */
 ::-webkit-scrollbar-button {
     height: 12px;
     }
@@ -42,6 +43,14 @@
     background: rgb(90, 90, 90);
     height: 10px;
     border-radius: 20px;
+  }
+
+  /* scrollbar for Firefox */
+  .scroller {
+    width: 12px;
+    height: 50px;
+    scrollbar-width: auto;
+    scrollbar-color: auto;
   }
 
 /* For small laptop */
