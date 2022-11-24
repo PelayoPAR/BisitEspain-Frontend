@@ -1,6 +1,10 @@
 .mapWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 2;
   height: 80vh;
-  width: 80vw;
+  min-width: 60vw;
 }
 
 .mapCanvas {
@@ -10,7 +14,8 @@
 
 @media screen and (max-width: 480px) {
   .mapWrapper {
-    height: 40vh
+    height: 40vh;
+    /* meter width y height fijas a cada mediaquery */
   }
 }
 
@@ -28,11 +33,6 @@
 
 @media screen and (min-width: 1024px) and (max-width: 1200px) {
   .mapWrapper {
-    /* width: 50vw; */
-    /* max-height: 60vh; */
-    /* overflow-y: none; */
-    /* margin-bottom: 0; */
-    height: 10vh;
-  width: 10vw;
+  
   }
 }

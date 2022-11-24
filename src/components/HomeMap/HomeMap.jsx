@@ -123,7 +123,7 @@ const Map = ({ allProvinces, setHighlightedProvince }) => {
   }, [geoData, dimensions, allProvinces, navigate, setHighlightedProvince]);
 
   const viewBoxCoords = ({ width, height }) => {
-    const coefs = [0.3, 0, 0.8, 0.6];
+    const coefs = [0.28, 0, 0.72, 0.55];
     return `
           ${width * coefs[0]} 
           ${height * coefs[1]} 

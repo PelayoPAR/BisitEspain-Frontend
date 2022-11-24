@@ -8,7 +8,9 @@ function Footer() {
         <a href="https://www.linkedin.com/in/maxime-erkens-13273031">
           Maxime Erkens
         </a>{" "}
-        <a href="https://www.linkedin.com/in/pelayo-perez/">Pelayo Perez</a>
+        <a href="https://www.linkedin.com/in/pelayo-perez/">
+          Pelayo Perez de Ayala
+        </a>
       </p>
     </div>
   );
