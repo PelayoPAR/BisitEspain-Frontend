@@ -13,11 +13,11 @@ function MapRecenterBtn({ selectedProvince, viewport, setViewport }) {
   return (
     <button
       className="recenterButton"
-      style={{ position: "relative", top: "20px", left: "47%", zIndex: 500 }}
+      style={{ position: "relative", top: "20px", left: "49%", zIndex: 500 }}
       onClick={handleClick}
     >
       <CenterFocusStrongIcon />
-      <p>Center Map</p>
+      {/* <p>Center Map</p> */}
     </button>
   );
 }

@@ -4,8 +4,8 @@
   align-items: center;
   flex-grow: 2;
   height: 80vh;
-  /* min-width: 60vw; */
-  max-width: 60vw;
+  min-width: 60vw;
+  /* max-width: 60vw; */
 }
 
 .mapCanvas {
@@ -16,7 +16,7 @@
 @media screen and (max-width: 480px) {
   .mapWrapper {
     height: 45vh;
-    width: 90vw;
+    min-width: 60vw;
     /* max-height: 45vh; */
     /* meter width y height fijas a cada mediaquery */
   }
@@ -25,7 +25,7 @@
 @media screen and (min-width:481px) and (max-width: 768px) {
   .mapWrapper {
     height: 40vh;
-    width: 70vw;
+    /* width: 70vw; */
   }
 }
 
@@ -45,7 +45,15 @@
 
 @media screen and (min-width: 1200px) and (max-width: 1340px) {
   .mapWrapper {
-  
+    max-width: 60vw;
+    padding-right: 1rem;
+    min-width: 50vw;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+  .mapWrapper {
+    max-width: 60vw;
     padding-right: 1rem;
     }
 }
